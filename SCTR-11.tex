@@ -1,0 +1,1321 @@
+\documentclass[SE,lsstdraft,STR,toc]{lsstdoc}
+\usepackage{geometry}
+\usepackage{longtable,booktabs}
+\usepackage{enumitem}
+\usepackage{arydshln}
+
+\input meta.tex
+
+\providecommand{\tightlist}{
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\begin{document}
+
+\def\milestoneName{Camera Rotator Functional Re-Verification}
+\def\milestoneId{LVV-P59}
+\def\product{SIT-COM Integration}
+
+\setDocCompact{true}
+
+\title{ LVV-P59 Camera Rotator Functional Re-Verification Test Plan and Report}
+\setDocRef{\lsstDocType-\lsstDocNum}
+\date{\vcsdate}
+\setDocUpstreamLocation{\url{https://github.com/lsst/lsst-texmf/examples}}
+\author{ Kevin Siruno }
+
+\input history_and_info.tex
+
+
+\setDocAbstract{
+This is the test plan and report for LVV-P59 (Camera Rotator Functional Re-Verification),
+an LSST milestone pertaining to the System Engineering Subsystem.
+}
+
+
+\maketitle
+
+\section{Introduction}
+\label{sect:intro}
+
+
+\subsection{Objectives}
+\label{sect:objectives}
+
+The objective of this test plan is to re-verify the functional
+requirements of the camera rotator's hardware and software, after
+shipment from the vendors facility to the Summit, as defined in LTS-206
+and LTS-160. This test campaign will only exercise the functionality
+that was executed previously and meets the following criteria:
+
+\begin{itemize}
+\tightlist
+\item
+  Only requires the camera rotator to be operable
+\item
+  Only requires the vendors EUI software and hardware via local control
+\item
+  Only requires a laser tracker
+\item
+  Does \textbf{NOT} require the camera rotator to be loaded with the
+  camera simulated mass or actual camera hardware
+\end{itemize}
+
+The hardware functional requirements were previously verified during the
+test campaign by the vendor at the vendors facility and accepted by LSST
+during the Factory Acceptance Test review.
+
+
+
+\subsection{System Overview}
+\label{sect:systemoverview}
+
+The Camera Rotator is mounted to the Camera Hexapod with the primary
+function of rotating the camera about the Camera's central axis.
+
+
+\subsection{Document Overview}
+\label{sect:docoverview}
+
+This document was generated from Jira, obtaining the relevant information from the 
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testPlan/LVV-P59}{LVV-P59}
+~Jira Test Plan and related Test Cycles (
+  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCycle/LVV-C110}{LVV-C110}
+).
+
+Section \ref{sect:intro} provides an overview of the test campaign, the system under test (\product{}), the applicable documentation, and explains how this document is organized.
+Section \ref{sect:configuration}  describes the configuration used for this test.
+Section \ref{sect:personnel} describes the necessary roles and lists the individuals assigned to them.
+%Section \ref{sect:plannedtestactivities} provides the list of planned test cycles and test cases, including all relevant information that fully describes the test campaign.
+
+Section \ref{sect:overview} provides a summary of the test results, including an overview in Table \ref{table:summary}, an overall assessment statement and suggestions for possible improvements.
+Section \ref{sect:detailedtestresults} provides detailed results for each step in each test case.
+
+The current status of test plan LVV-P59 in Jira is \textbf{ Draft }.
+
+\subsection{References}
+\label{sect:references}
+\renewcommand{\refname}{}
+\bibliography{lsst,refs,books,refs_ads}
+\section{Test Configuration}
+\label{sect:configuration}
+
+\subsection{Data Collection}
+
+  Observing is not required for this test campaign.
+
+\subsection{Verification Environment}
+\label{sect:hwconf}
+  The Camera Rotator will be verified in a climate controlled environment
+on the 3rd floor of the Summit Facility integrated with the Camera Cable
+Wrap on the Camera Cart.
+
+
+  \subsection{Entry Criteria}
+  In order to test the Camera Rotator functionality, the following
+criteria must be met first:
+
+\begin{itemize}
+\tightlist
+\item
+  All the test setup for the Data Acquisition system must be completed
+  and ready to record data for the laser tracker and current probes
+\item
+  The Laser tracker and SMR's are installed and setup
+\item
+  The Inductive current probes are installed and setup
+\item
+  All utilities and electrical connections are hooked up and allow the
+  Camera Rotator to be powered on and controlled
+\item
+  The EFD must be set up to be able to store events and telemetry data
+\end{itemize}
+
+
+  \subsection{Exit Criteria}
+  In order for this event to be considered complete, the following
+criteria must be met:
+
+\begin{itemize}
+\tightlist
+\item
+  Raw test data, events, and telemetry have been saved for the Camera
+  Rotator.
+\item
+  All test data has been analyzed and post processed.
+\item
+  All test steps have been statused in the Jira Test Cases within this
+  Test Plan and actual results populated as required.
+\item
+  A summary of the results of the test campaign has been captured in the
+  Overall Assessment and Recommended Improvements fields of this Test
+  Plan
+\item
+  A link to the verification artifacts used to produce the summary of
+  results has been populated in the Verification Artifacts field of this
+  Test Plan
+\item
+  Any failures have been captured in the
+  \href{https://jira.lsstcorp.org/projects/FRACAS/issues/}{FRACAS}
+  project
+\end{itemize}
+
+
+  \subsection{PMCS Activity}
+  See Epics in Traceability Tab
+
+
+\newpage
+\section{Personnel}
+\label{sect:personnel}
+
+The personnel involved in the test campaign is shown in the following table.
+
+\begin{longtable}{p{3cm}p{3cm}p{3cm}p{6cm}}
+\hline
+\multicolumn{2}{r}{Test Plan (LVV-P59) owner:} &
+\multicolumn{2}{l}{\textbf{ Kevin Siruno } }\\\hline
+\multicolumn{2}{r}{ LVV-C110 owner:} &
+\multicolumn{2}{l}{\textbf{
+    Kevin Siruno
+}
+} \\\hline
+\textbf{Test Case} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1577}{LVV-T1577}
+& {\small Kevin Siruno } & {\small  } &
+{\small (1) Software Engineer\\
+(1) Hardware Engineer
+ } \\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1576}{LVV-T1576}
+& {\small Kevin Siruno } & {\small  } &
+{\small (1) Mechanical Engineer/Optical Engineer\\
+(1) Electrical Engineer
+ } \\ \hline
+\end{longtable}
+
+\newpage
+
+\section{Overview of the Test Results}
+\label{sect:overview}
+
+\subsection{Summary}
+\label{sect:summarytable}
+
+\begin{longtable}{p{0.12\textwidth}p{0.2\textwidth}p{0.56\textwidth}p{0.12\textwidth}}
+\toprule
+
+  \multicolumn{3}{c}{ Test Cycle {\bf LVV-C110: Camera Rotator Re-verification
+ }} \\\hline
+
+  {\bf \footnotesize test case} & {\bf \footnotesize status} & {\bf \footnotesize comment} & {\bf \footnotesize issues} \\\toprule
+
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1577}{LVV-T1577}
+    & Not Executed &
+    \begin{minipage}[]{0.56\textwidth}
+    \smallskip
+    
+    \medskip
+    \end{minipage}
+    &     \\\hline
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1576}{LVV-T1576}
+    & Not Executed &
+    \begin{minipage}[]{0.56\textwidth}
+    \smallskip
+    
+    \medskip
+    \end{minipage}
+    &     \\\hline
+
+\caption{Test Results Summary}
+\label{table:summary}
+\end{longtable}
+
+\subsection{Overall Assessment}
+\label{sect:overallassessment}
+
+Not yet available.
+
+\subsection{Recommended Improvements}
+\label{sect:recommendations}
+
+Not yet available.
+
+\newpage
+\section{Detailed Test Results}
+\label{sect:detailedtestresults}
+
+
+  \subsection{Test Cycle LVV-C110 }
+
+Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C110}{Camera Rotator Re-verification
+}} in Jira.
+
+  Camera Rotator Re-verification
+\\
+  Status: Not Executed
+
+  Re-verify the hardware and software requirements for the Camera rotator
+that were previously tested by MOOG.
+
+
+  \subsubsection{Software Version/Baseline}
+    \begin{enumerate}
+\tightlist
+\item
+  Camera Rotator Control Software with SAL v3.5
+\item
+  Mariadb EFD with SAL v3.5
+\end{enumerate}
+
+
+  \subsubsection{Configuration}
+    No varying configuration between test cycles.
+
+
+  \subsubsection{Test Cases in LVV-C110 Test Cycle}
+
+
+    \paragraph{Test Case LVV-T1577 - Camera Rotator Software Functional Re-verification
+ }\mbox{}\\
+
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1577}{\textit{ LVV-T1577 } }
+test case in Jira.
+
+    The objective of this test case is to re-verify the functional
+requirements of the camera rotator's software, after shipment of the
+hardware from the vendor's facility to the Summit, as defined in LTS-206
+and LTS-160. This test case will only exercise the functionality that
+was executed previously and meets the following criteria:
+
+\begin{itemize}
+\tightlist
+\item
+  Only requires the camera rotator to be operable
+\item
+  Only requires the vendors EUI software and hardware via local control
+\item
+  Does \textbf{NOT} require the camera rotator to be loaded with the
+  camera simulated mass or actual camera hardware
+\end{itemize}
+
+The software functional requirements were previously verified during the
+test campaign by the vendor at the vendor's facility and accepted by
+LSST during the Factory Acceptance Test review. The test procedure used
+during the vendor's acceptance testing is the \emph{LSST
+Hexapods-Rotator Software Acceptance Test Procedure} which is attached
+to this test case. The test steps of this test case are taken directly
+from that document on how to perform the test in a similar way as was
+performed previously and includes changes noted by the vendor.\\
+~\\
+The \emph{LSST Hexapods-Rotator Software Acceptance Test
+Procedure\_Completed} has also been attached to this test case for
+additional information on which tests were passed.\\
+~\\
+See the Confluence page \emph{Updated Middleware Test in SLAC at
+10/15/2019} linked in the Traceability Tab for additional results of the
+State Transition Test done by LSST using a GUI and SAL 3.10.\\
+~\\
+See the attached \emph{LSST Rotator Operator's Manual} for more
+information on how to operate the rotator.\\
+~\\
+
+
+    \textbf{ Preconditions}:\\
+    Prior to the execution of this test case to re-verify the Camera Rotator
+software functional requirements, the following Summit tasks must be
+completed:\\
+
+\begin{itemize}
+\tightlist
+\item
+  The cables and cabinets have been checked~
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://jira.lsstcorp.org/browse/SUMMIT-3231}
+  \end{itemize}
+\item
+  Boxes for the hexapod/rotator have been transported to the 3rd level
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://jira.lsstcorp.org/browse/SUMMIT-3230}
+  \end{itemize}
+\item
+  Test fit Camera Hexapod with Offset
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://jira.lsstcorp.org/browse/SUMMIT-3293}
+  \end{itemize}
+\item
+  The Hexapod and Rotator have been installed on camera cart
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://jira.lsstcorp.org/browse/SUMMIT-3224}
+  \end{itemize}
+\item
+  The Camera hexapod/rotator has been connected to the electronics
+  cabinets and the connections have been tested
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://jira.lsstcorp.org/browse/SUMMIT-3294}
+  \end{itemize}
+\end{itemize}
+
+
+    Execution status: {\bf Not Executed }
+
+    Final comment:\\
+
+
+    Detailed step results:
+
+    \begin{longtable}{p{1cm}p{2cm}p{13cm}}
+    \hline
+    {Step} & \multicolumn{2}{c}{Description, Results and Status}\\ \hline
+      1 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Section 3.2.1 of the attached Software Acceptance Test Procedure\\
+Test Sequence \#1 - PositionSet and Move Commands
+
+\begin{itemize}
+\tightlist
+\item
+  In the enabled/stationary state, send a positionSet command of 12 deg.
+  Confirm that the rotator does not move.
+\item
+  Send a positionSet command of 15deg. Confirm that the rotator does not
+  move.
+\item
+  Send a move command. Confirm that the rotator moves to 15 deg.
+\end{itemize}
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      As initially tested in the LSST Hexapods-Rotator Software Acceptance
+Test Procedure\_Completed, Sheet 8-9, the Rotator only moves when given
+a positionSet command AND a move command controlled through the EUI
+device.~
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      2 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Section 3.2.1 of the attached Software Acceptance Test Procedure\\
+Test Sequence \#2 - StopCommand
+
+\begin{itemize}
+\tightlist
+\item
+  In the enabled/stationary state, send a positionSet command of 50 deg.
+  Confirm that the rotator does not move.
+\item
+  Send a move command.~
+\item
+  While the rotator is still moving, send a Stop command. Confirm that
+  the system quickly comes to a stop before reaching the 50 deg
+  position.
+\item
+  Send a positionSet command of 60 deg followed by a move command.
+  Confirm the rotator moves to the commanded position following the
+  previous stop command.
+\end{itemize}
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      As initially tested in the LSST Hexapods-Rotator Software Acceptance
+Test Procedure\_Completed, Sheet 9, the rotator is able to receive and
+execute a stop command while in motion through the EUI device.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      3 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Section 3.2.1 of the attached Software Acceptance Test Procedure\\
+Test Sequence \#3 - VelocitySet and MoveConstantVelocity Commands
+
+\begin{itemize}
+\tightlist
+\item
+  In the enabled/stationary state, send a velocitySet command of 0.01
+  deg/s and 15 seconds. Confirm that the rotator does not move.
+\item
+  Send a velocitySet command of 0.02 deg/s and 10 seconds. Confirm that
+  the rotator does not move.
+\item
+  Send a moveConstantVelocity command. Confirm that the rotator moves
+  approximately 0.2 degrees total over 10 seconds before coming to a
+  stop and transitioning back to enabled/stationary state.~
+\end{itemize}
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      As initially tested in the LSST Hexapods-Rotator Software Acceptance
+Test Procedure\_Completed, Sheet 9, the rotator is able to move 0.2
+degrees over 10 seconds ~only when the moveConstantVelocity command is
+given through the EUI.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      4 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Section 3.2.2 of the attached Software Acceptance Test Procedure\\
+Test Sequence \#6 - configureVelocity Command
+
+\begin{itemize}
+\tightlist
+\item
+  In the enabled/stationary state, send a configureVelocity command of 4
+  deg/s. Confirm that the command is rejected for being out of
+  acceptable range.
+\item
+  Send a configureVelocity command of 0.5 deg/s. Confirm that this
+  command is accepted.
+\item
+  Send a positionSet command to a position 10 deg away from the current
+  position. Send a move command. Confirm that the move is completed in
+  approximately 20 seconds.
+\item
+  Record the corresponding DDS events that were generated.
+\end{itemize}
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Using the EUI, the rotator is able to receive the configureVelocity,
+positionSet and move command to ~set the velocity to 0.5 deg/s and moves
+to a position 10 deg away from the current position in approximately 20
+seconds.~
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      5 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Section 3.2.2 of the attached Software Acceptance Test Procedure\\
+Test Sequence \#7 - configureAcceleration Command
+
+\begin{itemize}
+\tightlist
+\item
+  In the enabled/stationary state with the configureVelocity command
+  from the previous still in effect, send a configureAcceleration
+  command of 2 deg/s\^{}2. Confirm that the command is rejected for
+  being out of acceptable range.
+\item
+  Send a configureAcceleration command of 0.05 deg/s\^{}2. Confirm that
+  the command is accepted.
+\item
+  Send a positionSet command to a position 10 deg away from the current
+  position. Send a move command. Confirm that the move is completed in
+  approximately 30 seconds.~
+\item
+  Record the corresponding DDS events that were generated.
+\end{itemize}
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Using the EUI, the rotator is able to receive a configureAcceleration,
+positionSet and move command to set the acceleration to 0.05 deg/\^{}2
+and moves to a position 10 deg away from the current position in
+approximately 30 seconds.~
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      6 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Section 3.3.1 of the attached Software Acceptance Test Procedure
+
+\begin{itemize}
+\tightlist
+\item
+  At startup, confirm that the system starts in the Offline/PublishOnly
+  state
+\item
+  Send an offline substate trigger of systemReady. Confirm system goes
+  into Offline/Available substate.
+\item
+  Send an EnterControl trigger and confirm the system transitions from
+  Offline/Availale to Standby state
+\item
+  Send a Start trigger and confirm the system transitions from Standby
+  to Disabled state.
+\item
+  Send an Enable trigger and confirm the system transitions from
+  Disabled to Enabled state
+\item
+  Send a Disable trigger and confirm the system transitions from Enabled
+  to Disabled state
+\item
+  Send a Standby trigger and confirm the system transitions from
+  Disabled state to Standby state
+\item
+  Send a exitControl trigger and confirm the system transitions from
+  Standby state to Offline state
+\item
+  Return to the Enabled state. Trip the safety interlock switch and
+  confirm the system transitions to Fault state.
+\item
+  Reset the safety interlock and send a ClearError trigger. Confirm the
+  system transitions from Fault state to Offline state.
+\item
+  Repeat all tests on both hexapods and rotator.
+\end{itemize}
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      As initially tested in the LSST Hexapods-Rotator Software Acceptance
+Test Procedure\_Completed, Sheet 11-12, the rotator system transitions
+to the correct states as defined in LTS-160, Section 3.3.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      7 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Section 5.1 of the attached Software Acceptance Test Procedure
+
+\begin{itemize}
+\tightlist
+\item
+  In the Enabled state, unplug an encoder cable for one of the rotator
+  motors. Confirm that a Drive Fault event is created and the system
+  transitions to Fault state.
+\item
+  In the Enabled state, unplug a linear encoder cable for the rotator.
+  Confirm that a Linear Encoder Error event is created and the system
+  transitions to Fault state.
+\item
+  Set the Following Error Threshold parameter to a very small value
+  (0.0001 deg or smaller) and command a PositionSet/Move. Confirm that a
+  Following Error event is created and the system transitions to Fault
+  state.~
+\item
+  Activate the positive software limit using a special control program.
+  Confirm that a Positive Limit Switch error message is created and the
+  system transitions to Fault state.
+\item
+  Activate the negative software limit using a special control program.
+  Confirm that a Negative Limit Switch error message is created and the
+  system transitions to Fault State.
+\item
+  Unplug the Ethercat cable between the control PC and the Copley XE2
+  drive. Confirm that an Ethercat Problem event is created and the
+  system transitions to Fault state.
+\end{itemize}
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      As initially tested in the LSST Hexapods-Rotator Software Acceptance
+Test Procedure\_Completed, Sheet 14-15, the rotator displays the events
+on the EUI whenever a change in state occurs as specified in LTS-160,
+Section 5.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+    \end{longtable}
+
+
+    \paragraph{Test Case LVV-T1576 - Camera Rotator Hardware Functional Re-verification
+ }\mbox{}\\
+
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1576}{\textit{ LVV-T1576 } }
+test case in Jira.
+
+    The objective of this test case is to re-verify the functional
+requirements of the camera rotator's hardware, after shipment from the
+vendors facility to the Summit, as defined in LTS-206. This test case
+will only exercise the functionality that was executed previously and
+meets the following criteria:
+
+\begin{itemize}
+\tightlist
+\item
+  Only requires the camera rotator to be operable
+\item
+  Only requires the vendors EUI software and hardware via local control
+\item
+  Only requires a laser tracker
+\item
+  Does \textbf{NOT} require the camera rotator to be loaded with the
+  camera simulated mass or actual camera hardware
+\end{itemize}
+
+The hardware functional requirements were previously verified during the
+test campaign by the vendor at the vendors facility and accepted by LSST
+during the Factory Acceptance Test review. The test procedure used
+during the vendor's acceptance testing is the \emph{LSST
+Hexapods-Rotator Acceptance Test Procedure} which is attached to this
+test case. The test steps of this test case reference that document for
+the details on how to perform the test in a similar way as was performed
+previously and includes deviations to that document due to the
+differences in the verification configuration and deviations to
+requirements granted to the vendor by LSST.\\
+~\\
+The \emph{LSST Hexapods-Rotator Acceptance Test Report} has also been
+attached to this test case for additional information on how the tests
+were performed. The section numbering in this document matches that of
+the procedure.\\
+~\\
+See the attached \emph{LSST Rotator Operator's Manual} for more
+information on how to operate the rotator.
+
+
+    \textbf{ Preconditions}:\\
+    {Prior to the execution of this test case to re-verify the Camera
+Rotator hardware functional requirements, the following Summit tasks
+must be completed:}
+
+\begin{itemize}
+\tightlist
+\item
+  The cables and cabinets have been checked~
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://jira.lsstcorp.org/browse/SUMMIT-3231}
+  \end{itemize}
+\item
+  Boxes for the hexapod/rotator have been transported to the 3rd level
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://jira.lsstcorp.org/browse/SUMMIT-3230}
+  \end{itemize}
+\item
+  Test fit Camera Hexapod with Offset
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://jira.lsstcorp.org/browse/SUMMIT-3293}
+  \end{itemize}
+\item
+  The Hexapod and Rotator have been installed on camera cart
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://jira.lsstcorp.org/browse/SUMMIT-3224}
+  \end{itemize}
+\item
+  The Camera hexapod/rotator has been connected to the electronics
+  cabinets and the connections have been tested
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://jira.lsstcorp.org/browse/SUMMIT-3294}
+  \end{itemize}
+\item
+  The Offset has been installed on the Integrator
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://jira.lsstcorp.org/browse/SUMMIT-3281}
+  \end{itemize}
+\item
+  The setup for the laser tracker, current probes and data acquisition
+  system has been completed
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://jira.lsstcorp.org/browse/SUMMIT-3431}
+  \end{itemize}
+\end{itemize}
+
+
+    Execution status: {\bf Not Executed }
+
+    Final comment:\\
+
+
+    Detailed step results:
+
+    \begin{longtable}{p{1cm}p{2cm}p{13cm}}
+    \hline
+    {Step} & \multicolumn{2}{c}{Description, Results and Status}\\ \hline
+      1 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Follow Section 3.4.1 of the LSST Hexapods-Rotator Acceptance Test
+Procedure, Sheet 46.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      The axis of rotation is visually confirmed to be along the z-axis and is
+consistent to the results of the initial tests conducted by the vendor
+as seen in the LSST Hexapods-Rotator Acceptance Test Report, Sheet 48.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      2 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Follow Section 3.4.2 of the LSST Hexapods-Rotator Acceptance Test
+Procedure, Sheet 46 using a laser tracker.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      The Camera Rotator is tested every 30 degrees across the entire range of
+motion and the maximum angle error is found to be less than 0.009
+degrees.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      3 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Follow Section 3.4.3 of the LSST Hexapods-Rotator Acceptance Test
+Procedure, Sheet 47.\\
+\emph{Might Delete this step.}
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      The encoder values are verified to be correct by comparing the values
+recorded using the laser tracker.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      4 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Follow Section 3.4.4 of the LSST Hexapods-Rotator Acceptance Test
+Procedure, Sheet 47.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Without damaging the system, the hard end-stops are verified to allow
+the Camera Rotator to meet the 180 operational range without going over
+2 degrees past the limit.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      5 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Follow Section 3.4.5.1 of the LSST Hexapods-Rotator Acceptance Test
+Procedure, Sheet 48.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      The Camera Rotator is able to reach the required velocity of 3.5 deg/s
+as verified before per the LSST Hexapods-Rotator Acceptance Test Report,
+Sheet 50-52
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      6 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Follow Section 3.4.5.2 of the LSST Hexapods-Rotator Acceptance Test
+Procedure, Sheet 49.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      The Camera Rotator is able to reach the required acceleration of 1.0
+degrees/sec\^{}2 as verified before per the LSST Hexapods\_Rotator
+Acceptance Test Report, Sheet 52.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      7 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Follow Section 3.4.5.3 of the LSST Hexapods-Rotator Acceptance Test
+Procedure, Sheet 49.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      The initial result of the test (as seen in LSST Hexapods\_Rotator
+Acceptance Test Report, Sheet 52-54) found that the requirement was not
+met, but was accepted
+\url{https://jira.lsstcorp.org/browse/LVV-7218}\emph{~}
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      8 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Follow Section 3.4.5.4 of the LSST Hexapods-Rotator Acceptance Test
+Procedure, Sheet 49.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      9 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Follow Section 3.4.5.5 of the LSST Hexapods-Rotator Acceptance Test
+Procedure, Sheet 50.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      10 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Follow Section 3.4.5.6 of the LSST Hexapods-Rotator Acceptance Test
+Procedure, Sheet 50.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      11 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      To verify 3.4.6.1, follow Section 3.4.6.2 of the LSST Hexapods-Rotator
+Acceptance Test Procedure, Sheet 50-52.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      The SN02 Rotator is found to be able to reach all of the testing speeds
+from 0.005 to 0.068deg/s with a zero degree elevation angle.~
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      12 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Section 3.4.6.2 will be tested with 3.4.6.1.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      The SN02 Rotator's Tracking Accuracy is recorded for all tracking
+velocities from 0.05deg/s to 0.068deg/s with a zero degree elevation
+angle and is found to have a position error equal or better than 0.1
+arcs seconds RMS.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      13 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      See Section 3.4.6.6 of the LSST Hexapods-Rotator Acceptance Test
+Procedure, Sheet 53
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      By checking the current of the system, the heat dissipation for the
+rotator is verified to be less than 40W.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      14 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Follow Section 3.4.9 of the LSST Hexapods-Rotator Acceptance Test
+Procedure, Sheet 54.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      The locking pin is demonstrated to be able to engage at 15 deg intervals
+throughout the entire rotator range while the camera hexapod/rotator is
+installed on the camera cart.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+    \end{longtable}
+
+
+\input{appendix.tex}
+\end{document}

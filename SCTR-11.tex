@@ -225,7 +225,8 @@ The personnel involved in the test campaign is shown in the following table.
     
     \medskip
     \end{minipage}
-    &     \\\hline
+    &
+    \\\hline
     \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1576}{LVV-T1576}
     & Not Executed &
     \begin{minipage}[]{0.56\textwidth}
@@ -233,7 +234,8 @@ The personnel involved in the test campaign is shown in the following table.
     
     \medskip
     \end{minipage}
-    &     \\\hline
+    &
+    \\\hline
 
 \caption{Test Results Summary}
 \label{table:summary}
@@ -393,187 +395,6 @@ completed:\\
       1 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
-      \textbf{Section 3.2.1 of the attached Software Acceptance Test
-Procedure\\
-Test Sequence \#1 - PositionSet and Move Commands}\\
-~\\
-In the Enabled/Stationary state, send a positionSet command of 12 deg.
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-
-
-      & Expected Result &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Confirm that the rotator does not move.
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-
-      & Status          & Not Executed \\ \hline
-
-      2 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      \textbf{Section 3.2.1 of the attached Software Acceptance Test
-Procedure\\
-Test Sequence \#2 - StopCommand}\\
-~\\
-In the Enabled/Stationary state, send a positionSet command of 50 deg.
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-
-
-      & Expected Result &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Confirm that the rotator does not move.
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-
-      & Status          & Not Executed \\ \hline
-
-      3 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      \textbf{Section 3.2.1 of the attached Software Acceptance Test
-Procedure\\
-Test Sequence \#3 - VelocitySet and MoveConstantVelocity Commands}\\
-~\\
-In the Enabled/Stationary state, send a velocitySet command of 0.01
-deg/s and 15 seconds.
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-
-
-      & Expected Result &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Confirm that the rotator does not move.
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-
-      & Status          & Not Executed \\ \hline
-
-      4 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      \textbf{Section 3.3.1 of the attached Software Acceptance Test
-Procedure}\\
-\textbf{Actions on State Commands\\
-}~\\
-Startup the rotator.
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-
-
-      & Expected Result &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Confirm that the rotator starts in the Offline/PublishOnly state.
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-
-      & Status          & Not Executed \\ \hline
-
-      5 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      \textbf{Section 5.1 of the attached Software Acceptance Test
-Procedure}\\
-\textbf{Rotator Events\\
-}~\\
-In the Enabled state, unplug an encoder cable for one of the rotator
-motors.
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-
-        & Test Data        &
-        \begin{minipage}[t]{13cm}{\smallskip \footnotesize
-        \textbf{Deviation:~}Perform the following set of steps using the EUI
-instead of the DDS and verify the events are displayed on the EUI.
-
-        \medskip
-        } \end{minipage} \\
-        \\ \cdashline{2-3}
-
-      & Expected Result &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Confirm that a Drive Fault event is created and the system transitions
-to Fault state.
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-
-      & Status          & Not Executed \\ \hline
-
-      6 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
       \textbf{STARTING THE EUI}\\
 ~\\
 Double click the Hexapod GUI Viewer desktop icon on the computer.
@@ -610,7 +431,7 @@ Double click the Hexapod GUI Viewer desktop icon on the computer.
 
       & Status          & Not Executed \\ \hline
 
-      7 & Description &
+      2 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Enter the password "lsst-vnc"
@@ -649,7 +470,7 @@ publish through SAL but cannot receive commands.
 
       & Status          & Not Executed \\ \hline
 
-      8 & Description &
+      3 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       \textbf{OFFLINESTATE/AVAILABLESTATE}\\
@@ -686,7 +507,7 @@ OfflineState/AvailableState substate.\\
 
       & Status          & Not Executed \\ \hline
 
-      9 & Description &
+      4 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       \textbf{OFFLINESTATE -\textgreater{} STANDBYSTATE}\\
@@ -720,7 +541,7 @@ display box at the top of the Main tab says Standby State.\\
 
       & Status          & Not Executed \\ \hline
 
-      10 & Description &
+      5 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       \textbf{STANDBYSTATE -\textgreater{} DISABLEDSTATE}\\
@@ -756,7 +577,7 @@ transition into a Fault State
 
       & Status          & Not Executed \\ \hline
 
-      11 & Description &
+      6 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       \textbf{DISABLEDSTATE -\textgreater{} ENABLEDSTATE}\\
@@ -789,7 +610,7 @@ motor drives are enabled, and motion can be commanded.\\
 
       & Status          & Not Executed \\ \hline
 
-      12 & Description &
+      7 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       \textbf{FAULTSTATE}\\
@@ -826,7 +647,41 @@ reset the safety relay switch and send a clearError command.
 
       & Status          & Not Executed \\ \hline
 
-      13 & Description &
+      8 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      \textbf{Section 3.2.1 of the attached Software Acceptance Test
+Procedure\\
+Test Sequence \#1 - PositionSet and Move Commands}\\
+~\\
+In the Enabled/Stationary state, send a positionSet command of 12 deg.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Confirm that the rotator does not move.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      9 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Send a positionSet command of 15deg.
@@ -856,7 +711,7 @@ reset the safety relay switch and send a clearError command.
 
       & Status          & Not Executed \\ \hline
 
-      14 & Description &
+      10 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Send a move command.
@@ -886,7 +741,41 @@ reset the safety relay switch and send a clearError command.
 
       & Status          & Not Executed \\ \hline
 
-      15 & Description &
+      11 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      \textbf{Section 3.2.1 of the attached Software Acceptance Test
+Procedure\\
+Test Sequence \#2 - StopCommand}\\
+~\\
+In the Enabled/Stationary state, send a positionSet command of 50 deg.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Confirm that the rotator does not move.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      12 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Send a move command.
@@ -916,7 +805,7 @@ reset the safety relay switch and send a clearError command.
 
       & Status          & Not Executed \\ \hline
 
-      16 & Description &
+      13 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       While the rotator is still moving, send a Stop command.
@@ -947,7 +836,7 @@ deg position.
 
       & Status          & Not Executed \\ \hline
 
-      17 & Description &
+      14 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Send a positionSet command of 60 deg followed by a move command.
@@ -978,7 +867,42 @@ previous stop command.
 
       & Status          & Not Executed \\ \hline
 
-      18 & Description &
+      15 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      \textbf{Section 3.2.1 of the attached Software Acceptance Test
+Procedure\\
+Test Sequence \#3 - VelocitySet and MoveConstantVelocity Commands}\\
+~\\
+In the Enabled/Stationary state, send a velocitySet command of 0.01
+deg/s and 15 seconds.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Confirm that the rotator does not move.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      16 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Send a velocitySet command of 0.02 deg/s and 10 seconds.
@@ -1008,7 +932,7 @@ previous stop command.
 
       & Status          & Not Executed \\ \hline
 
-      19 & Description &
+      17 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Send a moveConstantVelocity command.
@@ -1040,7 +964,7 @@ enabled/stationary state.
 
       & Status          & Not Executed \\ \hline
 
-      20 & Description &
+      18 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       \textbf{Test of the Velocity Limit}\\
@@ -1076,7 +1000,7 @@ Step 12.}
 
       & Status          & Not Executed \\ \hline
 
-      21 & Description &
+      19 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       \textbf{\emph{\textless{}Conditional Step\textgreater{}}}\\
@@ -1110,7 +1034,7 @@ not move at a higher velocity than the velocity limit of 3.5 deg/s.
 
       & Status          & Not Executed \\ \hline
 
-      22 & Description &
+      20 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Perform a shutdown of the rotator.
@@ -1140,7 +1064,41 @@ not move at a higher velocity than the velocity limit of 3.5 deg/s.
 
       & Status          & Not Executed \\ \hline
 
-      23 & Description &
+      21 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      \textbf{Section 3.3.1 of the attached Software Acceptance Test
+Procedure}\\
+\textbf{Actions on State Commands\\
+}~\\
+Startup the rotator.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Confirm that the rotator starts in the Offline/PublishOnly state.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      22 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Send an Offline substate trigger of systemReady.
@@ -1170,7 +1128,7 @@ not move at a higher velocity than the velocity limit of 3.5 deg/s.
 
       & Status          & Not Executed \\ \hline
 
-      24 & Description &
+      23 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Send an EnterControl trigger.
@@ -1200,7 +1158,7 @@ not move at a higher velocity than the velocity limit of 3.5 deg/s.
 
       & Status          & Not Executed \\ \hline
 
-      25 & Description &
+      24 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Send a Start trigger.
@@ -1230,7 +1188,7 @@ not move at a higher velocity than the velocity limit of 3.5 deg/s.
 
       & Status          & Not Executed \\ \hline
 
-      26 & Description &
+      25 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Send an Enable trigger.
@@ -1260,7 +1218,7 @@ not move at a higher velocity than the velocity limit of 3.5 deg/s.
 
       & Status          & Not Executed \\ \hline
 
-      27 & Description &
+      26 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Send a Disable trigger.
@@ -1290,7 +1248,7 @@ not move at a higher velocity than the velocity limit of 3.5 deg/s.
 
       & Status          & Not Executed \\ \hline
 
-      28 & Description &
+      27 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Send a Standby trigger.\\
@@ -1321,7 +1279,7 @@ not move at a higher velocity than the velocity limit of 3.5 deg/s.
 
       & Status          & Not Executed \\ \hline
 
-      29 & Description &
+      28 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Send a exitControl trigger.
@@ -1351,7 +1309,7 @@ not move at a higher velocity than the velocity limit of 3.5 deg/s.
 
       & Status          & Not Executed \\ \hline
 
-      30 & Description &
+      29 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Return to the Enabled state and trip the safety interlock switch.
@@ -1381,7 +1339,7 @@ not move at a higher velocity than the velocity limit of 3.5 deg/s.
 
       & Status          & Not Executed \\ \hline
 
-      31 & Description &
+      30 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Reset the safety interlock and send a ClearError trigger.
@@ -1396,6 +1354,50 @@ not move at a higher velocity than the velocity limit of 3.5 deg/s.
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Confirm the system transitions from Fault state to Offline state.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      31 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      \textbf{Section 5.1 of the attached Software Acceptance Test
+Procedure}\\
+\textbf{Rotator Events\\
+}~\\
+In the Enabled state, unplug an encoder cable for one of the rotator
+motors.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+        & Test Data        &
+        \begin{minipage}[t]{13cm}{\smallskip \footnotesize
+        \textbf{Deviation:~}Perform the following set of steps using the EUI
+instead of the DDS and verify the events are displayed on the EUI.
+
+        \medskip
+        } \end{minipage} \\
+        \\ \cdashline{2-3}
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Confirm that a Drive Fault event is created and the system transitions
+to Fault state.
 
       \vspace{\dp0}
       } \end{minipage} \\
@@ -1784,8 +1786,16 @@ must be completed:}
       1 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
-      Follow Section 3.4.1 of the LSST Hexapods-Rotator Acceptance Test
-Procedure, Sheet 46.
+      \textbf{STARTING THE EUI}\\
+~\\
+Double click the Hexapod GUI Viewer desktop icon on the computer.
+
+\begin{itemize}
+\tightlist
+\item
+  This can be done on the Dell Management PC or another computer on the
+  same network
+\end{itemize}
 
       \vspace{\dp0}
       } \end{minipage} \\
@@ -1796,9 +1806,7 @@ Procedure, Sheet 46.
       & Expected Result &
 
       \begin{minipage}[t]{13cm}{\footnotesize
-      The axis of rotation is visually confirmed to be along the z-axis and is
-consistent to the results of the initial tests conducted by the vendor
-as seen in the LSST Hexapods-Rotator Acceptance Test Report, Sheet 48.
+      A prompt to enter the password is shown.
 
       \vspace{\dp0}
       } \end{minipage} \\
@@ -1817,29 +1825,27 @@ as seen in the LSST Hexapods-Rotator Acceptance Test Report, Sheet 48.
       2 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
-      Follow Section 3.4.2 of the LSST Hexapods-Rotator Acceptance Test
-Procedure, Sheet 46 using a laser tracker.
+      Enter the password "lsst-vnc"
+
+\begin{itemize}
+\tightlist
+\item
+  If the EUI isn't automatically up and running when the VNC opens,
+  double click on the CAM\_Hex\_eGUI or M2\_Hex\_eGUI icon on the VNC
+  viewer
+\end{itemize}
 
       \vspace{\dp0}
       } \end{minipage} \\
       \\ \cdashline{2-3}
 
 
-        & Test Data        &
-        \begin{minipage}[t]{13cm}{\smallskip \footnotesize
-        \textbf{Deviation:} Instead of using 5 different elevation angles, the
-test will only be conducted at a 0deg elevation angle
-
-        \medskip
-        } \end{minipage} \\
-        \\ \cdashline{2-3}
 
       & Expected Result &
 
       \begin{minipage}[t]{13cm}{\footnotesize
-      The Camera Rotator is tested every 30 degrees across the entire range of
-motion and the maximum angle error is found to be less than 0.009
-degrees.
+      The EUI is in the Offline State/PublishOnly substate and is able to
+publish through SAL but cannot receive commands.
 
       \vspace{\dp0}
       } \end{minipage} \\
@@ -1856,6 +1862,183 @@ degrees.
       & Status          & Not Executed \\ \hline
 
       3 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      \textbf{OFFLINESTATE/AVAILABLESTATE}\\
+On the Main tab, select the "Offline SubState Cmd" field in the Commands
+to Send section, set the Offline SubState Triggers to "System Ready" and
+click on the Send Command button.\\
+\includegraphics{jira_imgs/1005.png}
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      The system transitions from the OfflineState/PublishOnly substate to the
+OfflineState/AvailableState substate.\\
+~\\
+\includegraphics[width=4.6875in,height=\textheight]{jira_imgs/1007.png}
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      4 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      \textbf{OFFLINESTATE -\textgreater{} STANDBYSTATE}\\
+Click on the State Command field in the Commands to Send section.\\
+\includegraphics{jira_imgs/1030.png}
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      The system transitions into the StandbyState and the primary state
+display box at the top of the Main tab says Standby State.\\
+\includegraphics[width=4.6875in,height=\textheight]{jira_imgs/1018.png}
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      5 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      \textbf{STANDBYSTATE -\textgreater{} DISABLEDSTATE}\\
+From the StandbyState, send a start command.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      The system transitions into DisabledState and the current configuration
+parameters are maintained from the default parameters or from the
+previous DDS start command.~\\
+\includegraphics{jira_imgs/1019.png}\\
+If the configuration file is invalid or out of range, the system will
+transition into a Fault State
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      6 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      \textbf{DISABLEDSTATE -\textgreater{} ENABLEDSTATE}\\
+From the DisabledState, send an Enable state.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      The system transitions into the EnabledState/Stationary substate, the
+motor drives are enabled, and motion can be commanded.\\
+\includegraphics{jira_imgs/1020.png}\\
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      7 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      \textbf{FAULTSTATE}\\
+If a Fault occurs in any of the other states, the system will
+automatically transition to the Fault State. While in the Fault state,
+send a clearError command.\\
+{Note:} If the fault that occurs goes through the interlock system,
+reset the safety relay switch and send a clearError command.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      The system transitions back to the OfflineState/PublishOnly substate.
+(Go back to Step 3)\\
+\includegraphics{jira_imgs/1021.png}
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      8 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Follow Section 3.4.4 of the LSST Hexapods-Rotator Acceptance Test
@@ -1907,7 +2090,81 @@ Do \textbf{NOT} verify the rotator's End Stop hardpoints.
 
       & Status          & Not Executed \\ \hline
 
-      4 & Description &
+      9 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Follow Section 3.4.1 of the LSST Hexapods-Rotator Acceptance Test
+Procedure, Sheet 46.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      The axis of rotation is visually confirmed to be along the z-axis and is
+consistent to the results of the initial tests conducted by the vendor
+as seen in the LSST Hexapods-Rotator Acceptance Test Report, Sheet 48.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      10 & Description &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      Follow Section 3.4.2 of the LSST Hexapods-Rotator Acceptance Test
+Procedure, Sheet 46 using a laser tracker.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+        & Test Data        &
+        \begin{minipage}[t]{13cm}{\smallskip \footnotesize
+        \textbf{Deviation:} Instead of using 5 different elevation angles, the
+test will only be conducted at a 0deg elevation angle
+
+        \medskip
+        } \end{minipage} \\
+        \\ \cdashline{2-3}
+
+      & Expected Result &
+
+      \begin{minipage}[t]{13cm}{\footnotesize
+      The Camera Rotator is tested every 30 degrees across the entire range of
+motion and the maximum angle error is found to be less than 0.009
+degrees.
+
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
+      \begin{minipage}[t]{13cm}{\footnotesize
+      
+      \vspace{\dp0}
+      } \end{minipage} \\
+      \\ \cdashline{2-3}
+
+
+      & Status          & Not Executed \\ \hline
+
+      11 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Follow Section 3.4.5.1 of the LSST Hexapods-Rotator Acceptance Test
@@ -1940,7 +2197,7 @@ Sheet 50-52
 
       & Status          & Not Executed \\ \hline
 
-      5 & Description &
+      12 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Follow Section 3.4.5.2 of the LSST Hexapods-Rotator Acceptance Test
@@ -1973,7 +2230,7 @@ Acceptance Test Report, Sheet 52.
 
       & Status          & Not Executed \\ \hline
 
-      6 & Description &
+      13 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Follow Section 3.4.5.3 of the LSST Hexapods-Rotator Acceptance Test
@@ -2018,7 +2275,7 @@ deviation.\\
 
       & Status          & Not Executed \\ \hline
 
-      7 & Description &
+      14 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Follow Section 3.4.5.4 of the LSST Hexapods-Rotator Acceptance Test
@@ -2060,7 +2317,7 @@ Sheet 54.
 
       & Status          & Not Executed \\ \hline
 
-      8 & Description &
+      15 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Follow Section 3.4.5.5 of the LSST Hexapods-Rotator Acceptance Test
@@ -2102,7 +2359,7 @@ Sheet 55. }
 
       & Status          & Not Executed \\ \hline
 
-      9 & Description &
+      16 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Follow Section 3.4.5.6 of the LSST Hexapods-Rotator Acceptance Test
@@ -2143,7 +2400,7 @@ accuracy.}
 
       & Status          & Not Executed \\ \hline
 
-      10 & Description &
+      17 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       To verify 3.4.6.1, follow Section 3.4.6.2 of the LSST Hexapods-Rotator
@@ -2196,7 +2453,7 @@ angle (0 Deg El) to verify.
 
       & Status          & Not Executed \\ \hline
 
-      11 & Description &
+      18 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Follow Section 3.4.6.6 of the LSST Hexapods-Rotator Acceptance Test
@@ -2236,7 +2493,7 @@ rotator is verified to be less than 40W.
 
       & Status          & Not Executed \\ \hline
 
-      12 & Description &
+      19 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Follow Section 3.4.9 of the LSST Hexapods-Rotator Acceptance Test
@@ -2254,261 +2511,6 @@ Procedure, Sheet 54.
       The locking pin is demonstrated to be able to engage at 15 deg intervals
 throughout the entire rotator range while the camera hexapod/rotator is
 installed on the camera cart.
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-
-      & Status          & Not Executed \\ \hline
-
-      13 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      \textbf{STARTING THE EUI}\\
-~\\
-Double click the Hexapod GUI Viewer desktop icon on the computer.
-
-\begin{itemize}
-\tightlist
-\item
-  This can be done on the Dell Management PC or another computer on the
-  same network
-\end{itemize}
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-
-
-      & Expected Result &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      A prompt to enter the password is shown.
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-
-      & Status          & Not Executed \\ \hline
-
-      14 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Enter the password "lsst-vnc"
-
-\begin{itemize}
-\tightlist
-\item
-  If the EUI isn't automatically up and running when the VNC opens,
-  double click on the CAM\_Hex\_eGUI or M2\_Hex\_eGUI icon on the VNC
-  viewer
-\end{itemize}
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-
-
-      & Expected Result &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      The EUI is in the Offline State/PublishOnly substate and is able to
-publish through SAL but cannot receive commands.
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-
-      & Status          & Not Executed \\ \hline
-
-      15 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      \textbf{OFFLINESTATE/AVAILABLESTATE}\\
-On the Main tab, select the "Offline SubState Cmd" field in the Commands
-to Send section, set the Offline SubState Triggers to "System Ready" and
-click on the Send Command button.\\
-\includegraphics{jira_imgs/1005.png}
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-
-
-      & Expected Result &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      The system transitions from the OfflineState/PublishOnly substate to the
-OfflineState/AvailableState substate.\\
-~\\
-\includegraphics[width=4.6875in,height=\textheight]{jira_imgs/1007.png}
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-
-      & Status          & Not Executed \\ \hline
-
-      16 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      \textbf{OFFLINESTATE -\textgreater{} STANDBYSTATE}\\
-Click on the State Command field in the Commands to Send section.\\
-\includegraphics{jira_imgs/1030.png}
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-
-
-      & Expected Result &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      The system transitions into the StandbyState and the primary state
-display box at the top of the Main tab says Standby State.\\
-\includegraphics[width=4.6875in,height=\textheight]{jira_imgs/1018.png}
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-
-      & Status          & Not Executed \\ \hline
-
-      17 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      \textbf{STANDBYSTATE -\textgreater{} DISABLEDSTATE}\\
-From the StandbyState, send a start command.
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-
-
-      & Expected Result &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      The system transitions into DisabledState and the current configuration
-parameters are maintained from the default parameters or from the
-previous DDS start command.~\\
-\includegraphics{jira_imgs/1019.png}\\
-If the configuration file is invalid or out of range, the system will
-transition into a Fault State
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-
-      & Status          & Not Executed \\ \hline
-
-      18 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      \textbf{DISABLEDSTATE -\textgreater{} ENABLEDSTATE}\\
-From the DisabledState, send an Enable state.
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-
-
-      & Expected Result &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      The system transitions into the EnabledState/Stationary substate, the
-motor drives are enabled, and motion can be commanded.\\
-\includegraphics{jira_imgs/1020.png}\\
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-
-      & Status          & Not Executed \\ \hline
-
-      19 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      \textbf{FAULTSTATE}\\
-If a Fault occurs in any of the other states, the system will
-automatically transition to the Fault State. While in the Fault state,
-send a clearError command.\\
-{Note:} If the fault that occurs goes through the interlock system,
-reset the safety relay switch and send a clearError command.
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-
-
-      & Expected Result &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      The system transitions back to the OfflineState/PublishOnly substate.
-(Go back to Step 3)\\
-\includegraphics{jira_imgs/1021.png}
 
       \vspace{\dp0}
       } \end{minipage} \\

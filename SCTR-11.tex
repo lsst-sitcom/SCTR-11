@@ -90,7 +90,7 @@ Section \ref{sect:personnel} describes the necessary roles and lists the individ
 Section \ref{sect:overview} provides a summary of the test results, including an overview in Table \ref{table:summary}, an overall assessment statement and suggestions for possible improvements.
 Section \ref{sect:detailedtestresults} provides detailed results for each step in each test case.
 
-The current status of test plan LVV-P59 in Jira is \textbf{ Draft }.
+The current status of test plan LVV-P59 in Jira is \textbf{ Approved }.
 
 \subsection{References}
 \label{sect:references}
@@ -181,7 +181,7 @@ The personnel involved in the test campaign is shown in the following table.
 } \\\hline
 \textbf{Test Case} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1577}{LVV-T1577}
-& {\small Kevin Siruno } & {\small  } &
+& {\small Eric Coughlin } & {\small Eric Coughlin } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small (1) Software Engineer\\
@@ -191,7 +191,7 @@ The personnel involved in the test campaign is shown in the following table.
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1576}{LVV-T1576}
-& {\small Kevin Siruno } & {\small  } &
+& {\small Roberto Tighe } & {\small Austin Roberts } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small (1) Mechanical Engineer/Optical Engineer\\
@@ -210,18 +210,18 @@ The personnel involved in the test campaign is shown in the following table.
 \subsection{Summary}
 \label{sect:summarytable}
 
-\begin{longtable}{p{2.5cm}p{3cm}p{7.5cm}p{3cm}}
+\begin{longtable}{p{2cm}p{2.5cm}p{9cm}p{2.5cm}}
 \toprule
 \multicolumn{3}{l}{ Test Plan {\bf LVV-P59: Camera Rotator Functional Re-verification
- }} & Draft \\\hline
+ }} & Approved \\\hline
 
   \multicolumn{3}{l}{ Test Cycle {\bf LVV-C110: Camera Rotator Re-verification
- }} & Not Executed \\\hline
+ }} & In Progress \\\hline
 
   {\bf \footnotesize test case} & {\bf \footnotesize status} & {\bf \footnotesize comment} & {\bf \footnotesize issues} \\\toprule
 
     \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1577}{LVV-T1577}
-    & Not Executed &
+    & In Progress &
     \begin{minipage}[]{9cm}
     \smallskip
     
@@ -230,7 +230,7 @@ The personnel involved in the test campaign is shown in the following table.
     &
     \\\hline
     \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1576}{LVV-T1576}
-    & Not Executed &
+    & In Progress &
     \begin{minipage}[]{9cm}
     \smallskip
     
@@ -263,7 +263,7 @@ Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/
 
 Camera Rotator Re-verification
 \\
-Status: Not Executed
+Status: In Progress
 
 Re-verify the hardware and software requirements for the Camera rotator
 that were previously tested by MOOG.
@@ -273,9 +273,9 @@ that were previously tested by MOOG.
 \begin{enumerate}
 \tightlist
 \item
-  Camera Rotator Control Software with SAL v3.5
+  Camera Rotator Control Software with SAL v4.0
 \item
-  Mariadb EFD with SAL v3.5
+  EFD with SAL v4.0
 \end{enumerate}
 
 
@@ -378,7 +378,7 @@ completed:\\
 \end{itemize}
 
 
-Execution status: {\bf Not Executed }
+Execution status: {\bf In Progress }
 
 Final comment:\\
 
@@ -418,11 +418,12 @@ A prompt to enter the password is shown.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+Prompt to enter password for vnc connection displayed.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 2 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -455,11 +456,13 @@ publish through SAL but cannot receive commands.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+The EUI was in Offline State and PublishOnly Substate. Verified to
+publish through SAL by adding data to EFD.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 3 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -469,7 +472,7 @@ publish through SAL but cannot receive commands.
 On the Main tab, select the ``Offline SubState Cmd'' field in the
 Commands to Send section, set the Offline SubState Triggers to ``System
 Ready'' and click on the Send Command button.\\
-\includegraphics[width=1.79167in]{jira_imgs/1005.png}
+\includegraphics[width=4.68750in]{jira_imgs/1050.png}
 
 \medskip }
 \end{minipage}
@@ -480,8 +483,8 @@ Ready'' and click on the Send Command button.\\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
 The system transitions from the OfflineState/PublishOnly substate to the
-OfflineState/AvailableState
-substate.\\[2\baselineskip]\includegraphics[width=3.12500in]{jira_imgs/1007.png}
+OfflineState/AvailableState substate.\\
+\includegraphics[width=4.68750in]{jira_imgs/1051.png}
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -489,11 +492,12 @@ substate.\\[2\baselineskip]\includegraphics[width=3.12500in]{jira_imgs/1007.png}
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+System transitioned to substate AvailableState.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 4 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -501,7 +505,7 @@ substate.\\[2\baselineskip]\includegraphics[width=3.12500in]{jira_imgs/1007.png}
 \smallskip
 \textbf{OFFLINESTATE -\textgreater{} STANDBYSTATE}\\
 Click on the State Command field in the Commands to Send section.\\
-\includegraphics[width=1.79167in]{jira_imgs/1030.png}
+\includegraphics[width=4.42708in]{jira_imgs/1052.png}
 
 \medskip }
 \end{minipage}
@@ -512,8 +516,8 @@ Click on the State Command field in the Commands to Send section.\\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
 The system transitions into the StandbyState and the primary state
-display box at the top of the Main tab says Standby State.\\
-\includegraphics[width=4.68750in]{jira_imgs/1018.png}
+display box at the top of the Main tab says Standby
+State.\\[2\baselineskip]\includegraphics[width=4.68750in]{jira_imgs/1053.png}
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -521,11 +525,12 @@ display box at the top of the Main tab says Standby State.\\
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+State transitions to StandbyState.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 5 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -555,11 +560,13 @@ transition into a Fault State
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+State transitions to DisabledState with default configuration(were not
+changed)
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 6 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -586,6 +593,8 @@ motor drives are enabled, and motion can be commanded.\\
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+State transitions to EnabledState and motor drive make noise indicating
+engagement of drives.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -621,11 +630,14 @@ The system transitions back to the OfflineState/PublishOnly substate.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+State transitions to fault state when interlock is tripped. Sending
+ClearError transitions out of fault state back to OffLineState and
+clears interlock error.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 8 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -652,11 +664,12 @@ Confirm that the rotator does not move.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+Rotator does not move and display newpt2pt position.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 9 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -680,11 +693,12 @@ Confirm that the rotator does not move.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+Rotator does not move and displays newpt2pt position.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 10 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -708,11 +722,12 @@ Confirm that the rotator moves to 15 deg.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+Rotator moves to commanded position according to rotator telemetry.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 11 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -739,6 +754,7 @@ Confirm that the rotator does not move.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+Rotator does not move and displays newpt2pt event.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -767,11 +783,12 @@ The rotator starts it's rotation.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+Rotator starts moving.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 13 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -796,11 +813,12 @@ deg position.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+Rotator performs controlled stop and performs quickly.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 14 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -825,11 +843,12 @@ previous stop command.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+Rotator moves according new command.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 15 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -857,11 +876,12 @@ Confirm that the rotator does not move.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+Rotator does not move.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 16 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -885,11 +905,12 @@ Confirm that the rotator does not move.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+Rotator does not move.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 17 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -915,11 +936,12 @@ enabled/stationary state.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+Confirmed that it does that.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 18 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -948,11 +970,12 @@ Step 12.}
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+EUI rejects command.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 19 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -1007,11 +1030,12 @@ Rotator is shutdown.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+Rotator shuts down.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 21 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -1039,11 +1063,12 @@ Confirm that the rotator starts in the Offline/PublishOnly state.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+Rotator starts in the Offline state and PublishOnly substate.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 22 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -1067,11 +1092,12 @@ Confirm system goes into Offline/Available substate.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+Transitions to the Available substate.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 23 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -1095,11 +1121,12 @@ Confirm the system transitions from Offline/Available to Standby state.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+Transitions to the Standby state.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 24 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -1123,11 +1150,12 @@ Confirm the system transitions from Standby to Disabled state.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+Transitions to the Disabled state.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 25 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -1151,11 +1179,12 @@ Confirm the system transitions from Disabled to Enabled state.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+Transitions to the Enabled state.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 26 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -1179,11 +1208,12 @@ Confirm the system transitions from Enabled to Disabled state.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+Transitions to Disabled state.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 27 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -1207,11 +1237,12 @@ Confirm the system transitions from Disabled state to Standby state.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+Transitions to Standby state.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 28 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -1235,11 +1266,12 @@ Confirm the system transitions from Standby state to Offline state.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+Transitions to Offline state.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 29 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -1263,11 +1295,12 @@ Confirm the system transitions to Fault state.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+Transitions to Fault state.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 30 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -1291,11 +1324,12 @@ Confirm the system transitions from Fault state to Offline state.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+Transitions to Offline state
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 31 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -1561,11 +1595,12 @@ The defined telemetry streams were published to the EFD at 20Hz.
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
+Streams published to the EFD.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 \end{longtable}
 
@@ -1679,7 +1714,7 @@ must be completed:}
 \end{itemize}
 
 
-Execution status: {\bf Not Executed }
+Execution status: {\bf In Progress }
 
 Final comment:\\
 

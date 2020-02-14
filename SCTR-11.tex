@@ -92,7 +92,7 @@ Section \ref{sect:personnel} describes the necessary roles and lists the individ
 Section \ref{sect:overview} provides a summary of the test results, including an overview in Table \ref{table:summary}, an overall assessment statement and suggestions for possible improvements.
 Section \ref{sect:detailedtestresults} provides detailed results for each step in each test case.
 
-The current status of test plan LVV-P59 in Jira is \textbf{ Approved }.
+The current status of test plan LVV-P59 in Jira is \textbf{ Completed }.
 
 \subsection{References}
 \label{sect:references}
@@ -107,13 +107,12 @@ The current status of test plan LVV-P59 in Jira is \textbf{ Approved }.
 
 \subsection{Verification Environment}
 \label{sect:hwconf}
-   The Camera Rotator will be verified in a climate controlled environment
+  The Camera Rotator will be verified in a climate controlled environment
 on the 3rd floor of the Summit Facility integrated with the Camera Cable
 Wrap on the Camera Cart.
 
-
   \subsection{Entry Criteria}
-   In order to test the Camera Rotator functionality, the following
+  In order to test the Camera Rotator functionality, the following
 criteria must be met first:
 
 \begin{itemize}
@@ -132,9 +131,8 @@ criteria must be met first:
   The EFD must be set up to be able to store events and telemetry data
 \end{itemize}
 
-
   \subsection{Exit Criteria}
-   In order for this event to be considered complete, the following
+  In order for this event to be considered complete, the following
 criteria must be met:
 
 \begin{itemize}
@@ -161,10 +159,8 @@ criteria must be met:
   project
 \end{itemize}
 
-
   \subsection{PMCS Activity}
-   See Epics in Traceability Tab
-
+  See Epics in Traceability Tab
 
 \newpage
 \section{Personnel}
@@ -186,9 +182,8 @@ The personnel involved in the test campaign is shown in the following table.
 & {\small Eric Coughlin } & {\small Eric Coughlin } &
 \begin{minipage}[]{6cm}
 \smallskip
-{\small  (1) Software Engineer\\
-(1) Hardware Engineer
- }
+{\small (1) Software Engineer\\
+(1) Hardware Engineer }
 \medskip
 \end{minipage}
 \\ \hline
@@ -196,9 +191,8 @@ The personnel involved in the test campaign is shown in the following table.
 & {\small Roberto Tighe } & {\small Austin Roberts } &
 \begin{minipage}[]{6cm}
 \smallskip
-{\small  (1) Mechanical Engineer/Optical Engineer\\
-(1) Electrical Engineer
- }
+{\small (1) Mechanical Engineer/Optical Engineer\\
+(1) Electrical Engineer }
 \medskip
 \end{minipage}
 \\ \hline
@@ -214,11 +208,9 @@ The personnel involved in the test campaign is shown in the following table.
 
 \begin{longtable}{p{2cm}p{2.5cm}p{9cm}p{2.5cm}}
 \toprule
-\multicolumn{3}{l}{ Test Plan {\bf LVV-P59:  Camera Rotator Functional Re-verification
- }} & Approved \\\hline
+\multicolumn{3}{l}{ Test Plan {\bf LVV-P59: Camera Rotator Functional Re-verification }} & Completed \\\hline
 
-  \multicolumn{3}{l}{ Test Cycle {\bf LVV-C110:  Camera Rotator Re-verification
- }} & Done \\\hline
+  \multicolumn{3}{l}{ Test Cycle {\bf LVV-C110: Camera Rotator Re-verification }} & Done \\\hline
 
   {\bf \footnotesize test case} & {\bf \footnotesize status} & {\bf \footnotesize comment} & {\bf \footnotesize issues} \\\toprule
 
@@ -239,6 +231,7 @@ The personnel involved in the test campaign is shown in the following table.
     \medskip
     \end{minipage}
     &
+          \href{https://jira.lsstcorp.org/browse/LVV-18517}{LVV-18517}
     \\\hline
 \caption{Test Campaign Summary}
 \label{table:summary}
@@ -247,18 +240,24 @@ The personnel involved in the test campaign is shown in the following table.
 \subsection{Overall Assessment}
 \label{sect:overallassessment}
 
- Overall, the result of the test campaign is: FAIL.\\[2\baselineskip]The
+Overall, the result of the test campaign is: FAIL.\\[2\baselineskip]The
 majority of the Camera Rotator Software Function Re-verification test
 case passed. The remaining test steps were left unexecuted and will be
 re-verified in the final testing campaign of the Camera Rotator.\\
 The Camera Rotator Hardware Functional Re-verification test case failed
 as some of the test steps were not tested or tested incorrectly.~
 
-
 \subsection{Recommended Improvements}
 \label{sect:recommendations}
 
-Not yet available.
+The following action item was generated in order to improve the system:
+
+\begin{itemize}
+\tightlist
+\item
+  Update the LSST CSC software to allow the ability to adjust the Camera
+  Rotator Software Limits
+\end{itemize}
 
 \newpage
 \section{Detailed Test Results}
@@ -266,19 +265,16 @@ Not yet available.
 
 \subsection{Test Cycle LVV-C110 }
 
-Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C110}{ Camera Rotator Re-verification
-}} in Jira.
+Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C110}{Camera Rotator Re-verification}} in Jira.
 
- Camera Rotator Re-verification
-\\
+Camera Rotator Re-verification\\
 Status: Done
 
- Re-verify the hardware and software requirements for the Camera rotator
+Re-verify the hardware and software requirements for the Camera rotator
 that were previously tested by MOOG.
 
-
 \subsubsection{Software Version/Baseline}
- \begin{enumerate}
+\begin{enumerate}
 \tightlist
 \item
   Camera Rotator Control Software with SAL v4.0
@@ -286,20 +282,17 @@ that were previously tested by MOOG.
   EFD with SAL v4.0
 \end{enumerate}
 
-
 \subsubsection{Configuration}
- No varying configuration between test cycles.
-
+No varying configuration between test cycles.
 
 \subsubsection{Test Cases in LVV-C110 Test Cycle}
 
-\paragraph{Test Case LVV-T1577 -  Camera Rotator Software Functional Re-verification
- }\mbox{}\\
+\paragraph{Test Case LVV-T1577 - Camera Rotator Software Functional Re-verification }\mbox{}\\
 
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1577}{\textit{ LVV-T1577 } }
 test case in Jira.
 
- The objective of this test case is to re-verify the functional
+The objective of this test case is to re-verify the functional
 requirements of the camera rotator's software, after shipment of the
 hardware from the vendor's facility to the Summit, as defined in \citeds{LTS-206}
 and \citeds{LTS-160}. This test case will only exercise the functionality that
@@ -334,9 +327,8 @@ GUI and SAL 3.10.\\[2\baselineskip]See the attached \emph{LSST Rotator
 Operator's Manual} for more information on how to operate the
 rotator.\\[2\baselineskip]
 
-
 \textbf{ Preconditions}:\\
- Prior to the execution of this test case to re-verify the Camera Rotator
+Prior to the execution of this test case to re-verify the Camera Rotator
 software functional requirements, the following Summit tasks must be
 completed:\\
 
@@ -384,7 +376,6 @@ completed:\\
     \url{https://jira.lsstcorp.org/browse/SUMMIT-3294}
   \end{itemize}
 \end{itemize}
-
 
 Execution status: {\bf Initial Pass }
 
@@ -472,7 +463,7 @@ publish through SAL by adding data to EFD.
 On the Main tab, select the ``Offline SubState Cmd'' field in the
 Commands to Send section, set the Offline SubState Triggers to ``System
 Ready'' and click on the Send Command button.\\
-\includegraphics[width=4.68750in]{jira_imgs/1050.png}
+\includegraphics[width=4.16667in]{jira_imgs/1050.png}
 
 \medskip }
 \end{minipage}
@@ -952,6 +943,8 @@ not move at a higher velocity than the velocity limit of 3.5 deg/s.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+This step was not executed because the EUI rejected the velocitySet
+command of 4deg/s.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -1280,6 +1273,8 @@ to Fault state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+This step was deemed unnecessary to test during this test campaign and
+will be tested in a later test event if needed.~
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -1306,6 +1301,8 @@ transitions to Fault state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+This step was deemed unnecessary to test during this test campaign and
+will be tested in a later test event if needed.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -1333,6 +1330,8 @@ transitions to Fault state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+This step was deemed unnecessary to test during this test campaign and
+will be tested in a later test event if needed.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -1359,6 +1358,8 @@ system transitions to Fault state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+This step was deemed unnecessary to test during this test campaign and
+will be tested in a later test event if needed.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -1385,6 +1386,8 @@ system transitions to Fault State.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+This step was deemed unnecessary to test during this test campaign and
+will be tested in a later test event if needed.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -1412,6 +1415,8 @@ transitions to Fault state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+This step was deemed unnecessary to test during this test campaign and
+will be tested in a later test event if needed.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -1437,6 +1442,8 @@ Rotator is shutdown.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+A shutdown was not performed due to the amount of time it took to
+restart the system.~
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -1496,13 +1503,12 @@ Streams published to the EFD.
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T1576 -  Camera Rotator Hardware Functional Re-verification
- }\mbox{}\\
+\paragraph{Test Case LVV-T1576 - Camera Rotator Hardware Functional Re-verification }\mbox{}\\
 
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1576}{\textit{ LVV-T1576 } }
 test case in Jira.
 
- The objective of this test case is to re-verify the functional
+The objective of this test case is to re-verify the functional
 requirements of the camera rotator's hardware, after shipment from the
 vendors facility to the Summit, as defined in \citeds{LTS-206}. This test case
 will only exercise the functionality that was executed previously and
@@ -1537,9 +1543,8 @@ were performed. The section numbering in this document matches that of
 the procedure.\\[2\baselineskip]See the attached \emph{LSST Rotator
 Operator's Manual} for more information on how to operate the rotator.
 
-
 \textbf{ Preconditions}:\\
- {Prior to the execution of this test case to re-verify the Camera
+{Prior to the execution of this test case to re-verify the Camera
 Rotator hardware functional requirements, the following Summit tasks
 must be completed:}
 
@@ -1604,7 +1609,6 @@ must be completed:}
     \url{https://jira.lsstcorp.org/browse/SUMMIT-3431}
   \end{itemize}
 \end{itemize}
-
 
 Execution status: {\bf Fail }
 
@@ -1691,7 +1695,7 @@ This test step was verified in the previous test.
 On the Main tab, select the ``Offline SubState Cmd'' field in the
 Commands to Send section, set the Offline SubState Triggers to ``System
 Ready'' and click on the Send Command button.\\
-\includegraphics[width=4.68750in]{jira_imgs/1050.png}
+\includegraphics[width=4.16667in]{jira_imgs/1050.png}
 
 \medskip }
 \end{minipage}
@@ -1890,6 +1894,12 @@ the limit switches could not be tested.
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
+ & Issues found executing this step:  \\
+ & \begin{minipage}[t]{13cm}{\footnotesize
+\href{https://jira.lsstcorp.org/browse/LVV-18517}{LVV-18517}~~Unable to adjust Camera rotator software limits with current code
+
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
  & Status: \textbf{ Fail } \\ \hline
 
 9 & Description \\

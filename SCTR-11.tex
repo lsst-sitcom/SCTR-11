@@ -1,4 +1,4 @@
-\documentclass[SE,lsstdraft,STR,toc]{lsstdoc}
+\documentclass[SE,STR,toc]{lsstdoc}
 \usepackage{geometry}
 \usepackage{longtable,booktabs}
 \usepackage{enumitem}
@@ -8,6 +8,8 @@
 
 \providecommand{\tightlist}{
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\setcounter{tocdepth}{4}
 
 \begin{document}
 
@@ -19,7 +21,7 @@
 
 \title{ LVV-P59 Camera Rotator Functional Re-Verification Test Plan and Report}
 \setDocRef{\lsstDocType-\lsstDocNum}
-\date{\vcsdate}
+\date{2020-02-19}
 \setDocUpstreamLocation{\url{https://github.com/lsst/lsst-texmf/examples}}
 \author{ Kevin Siruno }
 
@@ -41,7 +43,7 @@ an LSST milestone pertaining to the System Engineering Subsystem.
 \subsection{Objectives}
 \label{sect:objectives}
 
-The objective of this test plan is to re-verify the functional
+ The objective of this test plan is to re-verify the functional
 requirements of the camera rotator's hardware and software, after
 shipment from the vendors facility to the Summit, as defined in \citeds{LTS-206}
 and \citeds{LTS-160}. This test campaign will only exercise the functionality
@@ -69,7 +71,7 @@ during the Factory Acceptance Test review.
 \subsection{System Overview}
 \label{sect:systemoverview}
 
-The Camera Rotator is mounted to the Camera Hexapod with the primary
+ The Camera Rotator is mounted to the Camera Hexapod with the primary
 function of rotating the camera about the Camera's central axis.
 
 
@@ -90,7 +92,7 @@ Section \ref{sect:personnel} describes the necessary roles and lists the individ
 Section \ref{sect:overview} provides a summary of the test results, including an overview in Table \ref{table:summary}, an overall assessment statement and suggestions for possible improvements.
 Section \ref{sect:detailedtestresults} provides detailed results for each step in each test case.
 
-The current status of test plan LVV-P59 in Jira is \textbf{ Approved }.
+The current status of test plan LVV-P59 in Jira is \textbf{ Completed }.
 
 \subsection{References}
 \label{sect:references}
@@ -108,7 +110,6 @@ The current status of test plan LVV-P59 in Jira is \textbf{ Approved }.
   The Camera Rotator will be verified in a climate controlled environment
 on the 3rd floor of the Summit Facility integrated with the Camera Cable
 Wrap on the Camera Cart.
-
 
   \subsection{Entry Criteria}
   In order to test the Camera Rotator functionality, the following
@@ -129,7 +130,6 @@ criteria must be met first:
 \item
   The EFD must be set up to be able to store events and telemetry data
 \end{itemize}
-
 
   \subsection{Exit Criteria}
   In order for this event to be considered complete, the following
@@ -159,10 +159,8 @@ criteria must be met:
   project
 \end{itemize}
 
-
   \subsection{PMCS Activity}
   See Epics in Traceability Tab
-
 
 \newpage
 \section{Personnel}
@@ -185,8 +183,7 @@ The personnel involved in the test campaign is shown in the following table.
 \begin{minipage}[]{6cm}
 \smallskip
 {\small (1) Software Engineer\\
-(1) Hardware Engineer
- }
+(1) Hardware Engineer }
 \medskip
 \end{minipage}
 \\ \hline
@@ -195,8 +192,7 @@ The personnel involved in the test campaign is shown in the following table.
 \begin{minipage}[]{6cm}
 \smallskip
 {\small (1) Mechanical Engineer/Optical Engineer\\
-(1) Electrical Engineer
- }
+(1) Electrical Engineer }
 \medskip
 \end{minipage}
 \\ \hline
@@ -212,45 +208,69 @@ The personnel involved in the test campaign is shown in the following table.
 
 \begin{longtable}{p{2cm}p{2.5cm}p{9cm}p{2.5cm}}
 \toprule
-\multicolumn{3}{l}{ Test Plan {\bf LVV-P59: Camera Rotator Functional Re-verification
- }} & Approved \\\hline
+\multicolumn{3}{l}{ Test Plan {\bf LVV-P59: Camera Rotator Functional Re-verification }} & Completed \\\hline
 
-  \multicolumn{3}{l}{ Test Cycle {\bf LVV-C110: Camera Rotator Re-verification
- }} & In Progress \\\hline
+  \multicolumn{3}{l}{ Test Cycle {\bf LVV-C110: Camera Rotator Re-verification }} & Done \\\hline
 
   {\bf \footnotesize test case} & {\bf \footnotesize status} & {\bf \footnotesize comment} & {\bf \footnotesize issues} \\\toprule
 
     \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1577}{LVV-T1577}
-    & In Progress &
+    & Initial Pass &
     \begin{minipage}[]{9cm}
     \smallskip
-    
+    Overall, the test campaign for the Camera Rotator Software Functional
+Re-verification was seen as an ``Initial Pass'' as this test will be
+repeated again (with a Camera mass). All the necessary test steps met
+the expected results and were labeled as ``Initial Pass''. The steps
+that were not executed were not necessary to verify the software
+functionality and can be tested in a future test campaign.~
     \medskip
     \end{minipage}
     &
     \\\hline
     \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1576}{LVV-T1576}
-    & In Progress &
+    & Fail &
     \begin{minipage}[]{9cm}
     \smallskip
-    
+    The test campaign for the Camera Hardware Functional Re-verification was
+seen as: FAIL.\\[2\baselineskip]Overall, the test campaign was
+successful but considered a ``FAIL'' due to one failed step requiring a
+software fix. For the complete test results, see \textbf{LSST Rotator
+Acceptance Test Results} in
+\url{https://docushare.lsstcorp.org/docushare/dsweb/View/Collection-8902/Document-35429}
+.
     \medskip
     \end{minipage}
     &
+          \href{https://jira.lsstcorp.org/browse/LVV-18517}{LVV-18517}
     \\\hline
-\caption{Test Results Summary}
+\caption{Test Campaign Summary}
 \label{table:summary}
 \end{longtable}
 
 \subsection{Overall Assessment}
 \label{sect:overallassessment}
 
-Not yet available.
+Overall, the result of the test campaign is: FAIL.\\[2\baselineskip]The
+Hardware Functional Re-verification test failed because we could not
+change the software limits to verify the limit switches. The software
+will be updated to fix this issue and it will be tested with the fix in
+the next test campaign (See Recommended Improvements). The majority of
+the Camera Rotator Software Functional Re-verification test steps
+passed, but some were left unexecuted and will also be tested during the
+next test campaign.\\[2\baselineskip]
 
 \subsection{Recommended Improvements}
 \label{sect:recommendations}
 
-Not yet available.
+The following action item was generated in order to improve the system:
+
+\begin{itemize}
+\tightlist
+\item
+  Update the LSST CSC software to allow for the ability to adjust the
+  Camera Rotator Software Limits
+\end{itemize}
 
 \newpage
 \section{Detailed Test Results}
@@ -258,16 +278,13 @@ Not yet available.
 
 \subsection{Test Cycle LVV-C110 }
 
-Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C110}{Camera Rotator Re-verification
-}} in Jira.
+Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C110}{Camera Rotator Re-verification}} in Jira.
 
-Camera Rotator Re-verification
-\\
-Status: In Progress
+Camera Rotator Re-verification\\
+Status: Done
 
 Re-verify the hardware and software requirements for the Camera rotator
 that were previously tested by MOOG.
-
 
 \subsubsection{Software Version/Baseline}
 \begin{enumerate}
@@ -278,15 +295,12 @@ that were previously tested by MOOG.
   EFD with SAL v4.0
 \end{enumerate}
 
-
 \subsubsection{Configuration}
 No varying configuration between test cycles.
 
-
 \subsubsection{Test Cases in LVV-C110 Test Cycle}
 
-\paragraph{Test Case LVV-T1577 - Camera Rotator Software Functional Re-verification
- }\mbox{}\\
+\paragraph{Test Case LVV-T1577 - Camera Rotator Software Functional Re-verification }\mbox{}\\
 
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1577}{\textit{ LVV-T1577 } }
 test case in Jira.
@@ -325,7 +339,6 @@ for additional results of the State Transition Test done by LSST using a
 GUI and SAL 3.10.\\[2\baselineskip]See the attached \emph{LSST Rotator
 Operator's Manual} for more information on how to operate the
 rotator.\\[2\baselineskip]
-
 
 \textbf{ Preconditions}:\\
 Prior to the execution of this test case to re-verify the Camera Rotator
@@ -377,10 +390,14 @@ completed:\\
   \end{itemize}
 \end{itemize}
 
+Execution status: {\bf Initial Pass }
 
-Execution status: {\bf In Progress }
-
-Final comment:\\
+Final comment:\\Overall, the test campaign for the Camera Rotator Software Functional
+Re-verification was seen as an ``Initial Pass'' as this test will be
+repeated again (with a Camera mass). All the necessary test steps met
+the expected results and were labeled as ``Initial Pass''. The steps
+that were not executed were not necessary to verify the software
+functionality and can be tested in a future test campaign.~
 
 
 Detailed steps results:
@@ -391,7 +408,6 @@ Detailed steps results:
 1 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{STARTING THE EUI}\\[2\baselineskip]Double click the Hexapod GUI
 Viewer desktop icon on the computer.
 
@@ -409,7 +425,6 @@ Viewer desktop icon on the computer.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 A prompt to enter the password is shown.
 
 \medskip }
@@ -417,26 +432,23 @@ A prompt to enter the password is shown.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Prompt to enter password for vnc connection displayed.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 2 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Enter the password ``lsst-vnc''
 
 \begin{itemize}
 \tightlist
 \item
   If the EUI isn't automatically up and running when the VNC opens,
-  double click on the CAM\_Hex\_eGUI or M2\_Hex\_eGUI icon on the VNC
-  viewer
+  double click on the Rotator\_eGUI icon on the VNC viewer
 \end{itemize}
 
 \medskip }
@@ -446,7 +458,6 @@ Enter the password ``lsst-vnc''
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The EUI is in the Offline State/PublishOnly substate and is able to
 publish through SAL but cannot receive commands.
 
@@ -455,24 +466,22 @@ publish through SAL but cannot receive commands.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The EUI was in Offline State and PublishOnly Substate. Verified to
 publish through SAL by adding data to EFD.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 3 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{OFFLINESTATE/AVAILABLESTATE}\\
 On the Main tab, select the ``Offline SubState Cmd'' field in the
 Commands to Send section, set the Offline SubState Triggers to ``System
 Ready'' and click on the Send Command button.\\
-\includegraphics[width=4.68750in]{jira_imgs/1050.png}
+\includegraphics[width=4.16667in]{jira_imgs/1050.png}
 
 \medskip }
 \end{minipage}
@@ -481,7 +490,6 @@ Ready'' and click on the Send Command button.\\
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions from the OfflineState/PublishOnly substate to the
 OfflineState/AvailableState substate.\\
 \includegraphics[width=4.68750in]{jira_imgs/1051.png}
@@ -491,18 +499,16 @@ OfflineState/AvailableState substate.\\
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 System transitioned to substate AvailableState.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 4 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{OFFLINESTATE -\textgreater{} STANDBYSTATE}\\
 Click on the State Command field in the Commands to Send section.\\
 \includegraphics[width=4.42708in]{jira_imgs/1052.png}
@@ -514,7 +520,6 @@ Click on the State Command field in the Commands to Send section.\\
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions into the StandbyState and the primary state
 display box at the top of the Main tab says Standby
 State.\\[2\baselineskip]\includegraphics[width=4.68750in]{jira_imgs/1053.png}
@@ -524,18 +529,16 @@ State.\\[2\baselineskip]\includegraphics[width=4.68750in]{jira_imgs/1053.png}
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 State transitions to StandbyState.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 5 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{STANDBYSTATE -\textgreater{} DISABLEDSTATE}\\
 From the StandbyState, send a start command.
 
@@ -546,7 +549,6 @@ From the StandbyState, send a start command.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions into DisabledState and the current configuration
 parameters are maintained from the default parameters or from the
 previous DDS start command.~\\
@@ -559,19 +561,17 @@ transition into a Fault State
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 State transitions to DisabledState with default configuration(were not
 changed)
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 6 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{DISABLEDSTATE -\textgreater{} ENABLEDSTATE}\\
 From the DisabledState, send an Enable state.
 
@@ -582,7 +582,6 @@ From the DisabledState, send an Enable state.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions into the EnabledState/Stationary substate, the
 motor drives are enabled, and motion can be commanded.\\
 \includegraphics[width=3.12500in]{jira_imgs/1020.png}\\
@@ -592,19 +591,17 @@ motor drives are enabled, and motion can be commanded.\\
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 State transitions to EnabledState and motor drive make noise indicating
 engagement of drives.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 7 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{FAULTSTATE}\\
 If a Fault occurs in any of the other states, the system will
 automatically transition to the Fault State. While in the Fault state,
@@ -619,7 +616,6 @@ the safety relay switch and send a clearError command.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions back to the OfflineState/PublishOnly substate.
 (Go back to Step 3)\\
 \includegraphics[width=3.12500in]{jira_imgs/1021.png}
@@ -629,7 +625,6 @@ The system transitions back to the OfflineState/PublishOnly substate.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 State transitions to fault state when interlock is tripped. Sending
 ClearError transitions out of fault state back to OffLineState and
 clears interlock error.
@@ -637,12 +632,11 @@ clears interlock error.
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 8 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{Section 3.2.1 of the attached Software Acceptance Test
 Procedure\\
 Test Sequence \#1 - PositionSet and Move Commands}\\[2\baselineskip]In
@@ -655,7 +649,6 @@ the Enabled/Stationary state, send a positionSet command of 12 deg.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that the rotator does not move.
 
 \medskip }
@@ -663,18 +656,16 @@ Confirm that the rotator does not move.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Rotator does not move and display newpt2pt position.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 9 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a positionSet command of 15deg.
 
 \medskip }
@@ -684,7 +675,6 @@ Send a positionSet command of 15deg.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that the rotator does not move.
 
 \medskip }
@@ -692,18 +682,16 @@ Confirm that the rotator does not move.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Rotator does not move and displays newpt2pt position.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 10 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a move command.
 
 \medskip }
@@ -713,7 +701,6 @@ Send a move command.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that the rotator moves to 15 deg.
 
 \medskip }
@@ -721,18 +708,16 @@ Confirm that the rotator moves to 15 deg.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Rotator moves to commanded position according to rotator telemetry.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 11 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{Section 3.2.1 of the attached Software Acceptance Test
 Procedure\\
 Test Sequence \#2 - StopCommand}\\[2\baselineskip]In the
@@ -745,7 +730,6 @@ Enabled/Stationary state, send a positionSet command of 50 deg.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that the rotator does not move.
 
 \medskip }
@@ -753,18 +737,16 @@ Confirm that the rotator does not move.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Rotator does not move and displays newpt2pt event.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 12 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a move command.
 
 \medskip }
@@ -774,7 +756,6 @@ Send a move command.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The rotator starts it's rotation.
 
 \medskip }
@@ -782,18 +763,16 @@ The rotator starts it's rotation.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Rotator starts moving.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 13 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 While the rotator is still moving, send a Stop command.
 
 \medskip }
@@ -803,7 +782,6 @@ While the rotator is still moving, send a Stop command.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that the system quickly comes to a stop before reaching the 50
 deg position.
 
@@ -812,18 +790,16 @@ deg position.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Rotator performs controlled stop and performs quickly.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 14 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a positionSet command of 60 deg followed by a move command.
 
 \medskip }
@@ -833,7 +809,6 @@ Send a positionSet command of 60 deg followed by a move command.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm the rotator moves to the commanded position following the
 previous stop command.
 
@@ -842,18 +817,16 @@ previous stop command.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Rotator moves according new command.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 15 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{Section 3.2.1 of the attached Software Acceptance Test
 Procedure\\
 Test Sequence \#3 - VelocitySet and MoveConstantVelocity
@@ -867,7 +840,6 @@ velocitySet command of 0.01 deg/s and 15 seconds.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that the rotator does not move.
 
 \medskip }
@@ -875,18 +847,16 @@ Confirm that the rotator does not move.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Rotator does not move.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 16 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a velocitySet command of 0.02 deg/s and 10 seconds.
 
 \medskip }
@@ -896,7 +866,6 @@ Send a velocitySet command of 0.02 deg/s and 10 seconds.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that the rotator does not move.
 
 \medskip }
@@ -904,18 +873,16 @@ Confirm that the rotator does not move.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Rotator does not move.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 17 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a moveConstantVelocity command.
 
 \medskip }
@@ -925,7 +892,6 @@ Send a moveConstantVelocity command.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that the rotator moves approximately 0.2 degrees total over 10
 seconds before coming to a stop and transitioning back to
 enabled/stationary state.
@@ -935,18 +901,16 @@ enabled/stationary state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirmed that it does that.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 18 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{Test of the Velocity Limit}\\[2\baselineskip]In the
 enabled/stationary state, send a velocitySet command of 4deg/s and 5
 seconds through the EUI.
@@ -958,7 +922,6 @@ seconds through the EUI.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The EUI does not allow for any value higher than 3.5 deg/s as an input
 for the velocitySet command.\\
 \emph{Note: If the EUI does not reject the velocitySet command, go to
@@ -969,18 +932,16 @@ Step 12.}
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 EUI rejects command.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 19 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{\emph{\textless{}Conditional
 Step\textgreater{}}}\\[2\baselineskip]If the EUI accepts the value of
 4deg/s and 5 seconds, send a move command.
@@ -992,7 +953,6 @@ Step\textgreater{}}}\\[2\baselineskip]If the EUI accepts the value of
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 If the rotator does not ignore the velocitySet command, the rotator does
 not move at a higher velocity than the velocity limit of 3.5 deg/s.
 
@@ -1001,7 +961,8 @@ not move at a higher velocity than the velocity limit of 3.5 deg/s.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+This step was not executed because the EUI rejected the velocitySet
+command of 4deg/s.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -1011,7 +972,6 @@ not move at a higher velocity than the velocity limit of 3.5 deg/s.
 20 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Perform a shutdown of the rotator.
 
 \medskip }
@@ -1021,7 +981,6 @@ Perform a shutdown of the rotator.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Rotator is shutdown.
 
 \medskip }
@@ -1029,18 +988,16 @@ Rotator is shutdown.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Rotator shuts down.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 21 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{Section 3.3.1 of the attached Software Acceptance Test
 Procedure}\\
 \textbf{Actions on State Commands\\
@@ -1054,7 +1011,6 @@ Startup the rotator.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that the rotator starts in the Offline/PublishOnly state.
 
 \medskip }
@@ -1062,18 +1018,16 @@ Confirm that the rotator starts in the Offline/PublishOnly state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Rotator starts in the Offline state and PublishOnly substate.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 22 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send an Offline substate trigger of systemReady.
 
 \medskip }
@@ -1083,7 +1037,6 @@ Send an Offline substate trigger of systemReady.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm system goes into Offline/Available substate.
 
 \medskip }
@@ -1091,18 +1044,16 @@ Confirm system goes into Offline/Available substate.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Transitions to the Available substate.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 23 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send an EnterControl trigger.
 
 \medskip }
@@ -1112,7 +1063,6 @@ Send an EnterControl trigger.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm the system transitions from Offline/Available to Standby state.
 
 \medskip }
@@ -1120,18 +1070,16 @@ Confirm the system transitions from Offline/Available to Standby state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Transitions to the Standby state.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 24 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a Start trigger.
 
 \medskip }
@@ -1141,7 +1089,6 @@ Send a Start trigger.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm the system transitions from Standby to Disabled state.
 
 \medskip }
@@ -1149,18 +1096,16 @@ Confirm the system transitions from Standby to Disabled state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Transitions to the Disabled state.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 25 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send an Enable trigger.
 
 \medskip }
@@ -1170,7 +1115,6 @@ Send an Enable trigger.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm the system transitions from Disabled to Enabled state.
 
 \medskip }
@@ -1178,18 +1122,16 @@ Confirm the system transitions from Disabled to Enabled state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Transitions to the Enabled state.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 26 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a Disable trigger.
 
 \medskip }
@@ -1199,7 +1141,6 @@ Send a Disable trigger.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm the system transitions from Enabled to Disabled state.
 
 \medskip }
@@ -1207,18 +1148,16 @@ Confirm the system transitions from Enabled to Disabled state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Transitions to Disabled state.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 27 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a Standby trigger.\\[2\baselineskip]
 
 \medskip }
@@ -1228,7 +1167,6 @@ Send a Standby trigger.\\[2\baselineskip]
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm the system transitions from Disabled state to Standby state.
 
 \medskip }
@@ -1236,18 +1174,16 @@ Confirm the system transitions from Disabled state to Standby state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Transitions to Standby state.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 28 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a exitControl trigger.
 
 \medskip }
@@ -1257,7 +1193,6 @@ Send a exitControl trigger.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm the system transitions from Standby state to Offline state.
 
 \medskip }
@@ -1265,18 +1200,16 @@ Confirm the system transitions from Standby state to Offline state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Transitions to Offline state.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 29 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Return to the Enabled state and trip the safety interlock switch.
 
 \medskip }
@@ -1286,7 +1219,6 @@ Return to the Enabled state and trip the safety interlock switch.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm the system transitions to Fault state.
 
 \medskip }
@@ -1294,18 +1226,16 @@ Confirm the system transitions to Fault state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Transitions to Fault state.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 30 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Reset the safety interlock and send a ClearError trigger.
 
 \medskip }
@@ -1315,7 +1245,6 @@ Reset the safety interlock and send a ClearError trigger.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm the system transitions from Fault state to Offline state.
 
 \medskip }
@@ -1323,18 +1252,16 @@ Confirm the system transitions from Fault state to Offline state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Transitions to Offline state
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 31 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{Section 5.1 of the attached Software Acceptance Test
 Procedure}\\
 \textbf{Rotator Events\\
@@ -1348,7 +1275,6 @@ motors.
 
  & Test Data \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 \textbf{Deviation:~}Perform the following set of steps using the EUI
 instead of the DDS and verify the events are displayed on the EUI.
 
@@ -1357,7 +1283,6 @@ instead of the DDS and verify the events are displayed on the EUI.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that a Drive Fault event is created and the system transitions
 to Fault state.
 
@@ -1366,7 +1291,8 @@ to Fault state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+This step was deemed unnecessary to test during this test campaign and
+will be tested in a later test event if needed.~
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -1376,7 +1302,6 @@ to Fault state.
 32 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 In the Enabled state, unplug a linear encoder cable for the rotator.
 
 \medskip }
@@ -1386,7 +1311,6 @@ In the Enabled state, unplug a linear encoder cable for the rotator.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that a Linear Encoder Error event is created and the system
 transitions to Fault state.
 
@@ -1395,7 +1319,8 @@ transitions to Fault state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+This step was deemed unnecessary to test during this test campaign and
+will be tested in a later test event if needed.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -1405,7 +1330,6 @@ transitions to Fault state.
 33 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Set the Following Error Threshold parameter to a very small value
 (0.0001 deg or smaller) and send a PositionSet and then Move command.
 
@@ -1416,7 +1340,6 @@ Set the Following Error Threshold parameter to a very small value
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that a Following Error event is created and the system
 transitions to Fault state.
 
@@ -1425,7 +1348,8 @@ transitions to Fault state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+This step was deemed unnecessary to test during this test campaign and
+will be tested in a later test event if needed.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -1435,7 +1359,6 @@ transitions to Fault state.
 34 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Activate the positive software limit using a special control program.
 
 \medskip }
@@ -1445,7 +1368,6 @@ Activate the positive software limit using a special control program.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that a Positive Limit Switch error message is created and the
 system transitions to Fault state.
 
@@ -1454,7 +1376,8 @@ system transitions to Fault state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+This step was deemed unnecessary to test during this test campaign and
+will be tested in a later test event if needed.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -1464,7 +1387,6 @@ system transitions to Fault state.
 35 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Activate the negative software limit using a special control program.
 
 \medskip }
@@ -1474,7 +1396,6 @@ Activate the negative software limit using a special control program.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that a Negative Limit Switch error message is created and the
 system transitions to Fault State.
 
@@ -1483,7 +1404,8 @@ system transitions to Fault State.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+This step was deemed unnecessary to test during this test campaign and
+will be tested in a later test event if needed.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -1493,7 +1415,6 @@ system transitions to Fault State.
 36 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Unplug the Ethercat cable between the control PC and the Copley XE2
 drive.\\[2\baselineskip]
 
@@ -1504,7 +1425,6 @@ drive.\\[2\baselineskip]
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that an Ethercat Problem event is created and the system
 transitions to Fault state.
 
@@ -1513,7 +1433,8 @@ transitions to Fault state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+This step was deemed unnecessary to test during this test campaign and
+will be tested in a later test event if needed.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -1523,7 +1444,6 @@ transitions to Fault state.
 37 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Perform a shutdown of the rotator.
 
 \medskip }
@@ -1533,7 +1453,6 @@ Perform a shutdown of the rotator.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Rotator is shutdown.
 
 \medskip }
@@ -1541,7 +1460,8 @@ Rotator is shutdown.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+A shutdown was not performed due to the amount of time it took to
+restart the system.~
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -1551,7 +1471,6 @@ Rotator is shutdown.
 38 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{Section 5.0 of the attached Software Acceptance Test
 Procedure}\\
 \textbf{Rotator Telemetry Verification}\\[2\baselineskip]Using the EFD,
@@ -1586,7 +1505,6 @@ verify that the following telemetry streams were published at a rate of
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The defined telemetry streams were published to the EFD at 20Hz.
 
 \medskip }
@@ -1594,18 +1512,16 @@ The defined telemetry streams were published to the EFD at 20Hz.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Streams published to the EFD.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Pass } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T1576 - Camera Rotator Hardware Functional Re-verification
- }\mbox{}\\
+\paragraph{Test Case LVV-T1576 - Camera Rotator Hardware Functional Re-verification }\mbox{}\\
 
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1576}{\textit{ LVV-T1576 } }
 test case in Jira.
@@ -1644,7 +1560,6 @@ attached to this test case for additional information on how the tests
 were performed. The section numbering in this document matches that of
 the procedure.\\[2\baselineskip]See the attached \emph{LSST Rotator
 Operator's Manual} for more information on how to operate the rotator.
-
 
 \textbf{ Preconditions}:\\
 {Prior to the execution of this test case to re-verify the Camera
@@ -1713,10 +1628,15 @@ must be completed:}
   \end{itemize}
 \end{itemize}
 
+Execution status: {\bf Fail }
 
-Execution status: {\bf In Progress }
-
-Final comment:\\
+Final comment:\\The test campaign for the Camera Hardware Functional Re-verification was
+seen as: FAIL.\\[2\baselineskip]Overall, the test campaign was
+successful but considered a ``FAIL'' due to one failed step requiring a
+software fix. For the complete test results, see \textbf{LSST Rotator
+Acceptance Test Results} in
+\url{https://docushare.lsstcorp.org/docushare/dsweb/View/Collection-8902/Document-35429}
+.
 
 
 Detailed steps results:
@@ -1727,7 +1647,6 @@ Detailed steps results:
 1 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{STARTING THE EUI}\\[2\baselineskip]Double click the Hexapod GUI
 Viewer desktop icon on the computer.
 
@@ -1745,7 +1664,6 @@ Viewer desktop icon on the computer.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 A prompt to enter the password is shown.
 
 \medskip }
@@ -1753,25 +1671,23 @@ A prompt to enter the password is shown.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+This test step was verified in the previous test.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 2 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Enter the password ``lsst-vnc''
 
 \begin{itemize}
 \tightlist
 \item
   If the EUI isn't automatically up and running when the VNC opens,
-  double click on the CAM\_Hex\_eGUI or M2\_Hex\_eGUI icon on the VNC
-  viewer
+  double click on the Rotator\_eGUI icon on the VNC viewer
 \end{itemize}
 
 \medskip }
@@ -1781,7 +1697,6 @@ Enter the password ``lsst-vnc''
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The EUI is in the Offline State/PublishOnly substate and is able to
 publish through SAL but cannot receive commands.
 
@@ -1790,22 +1705,21 @@ publish through SAL but cannot receive commands.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+This test step was verified in the previous test.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 3 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{OFFLINESTATE/AVAILABLESTATE}\\
 On the Main tab, select the ``Offline SubState Cmd'' field in the
 Commands to Send section, set the Offline SubState Triggers to ``System
 Ready'' and click on the Send Command button.\\
-\includegraphics[width=1.79167in]{jira_imgs/1005.png}
+\includegraphics[width=4.16667in]{jira_imgs/1050.png}
 
 \medskip }
 \end{minipage}
@@ -1814,30 +1728,28 @@ Ready'' and click on the Send Command button.\\
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions from the OfflineState/PublishOnly substate to the
-OfflineState/AvailableState
-substate.\\[2\baselineskip]\includegraphics[width=3.12500in]{jira_imgs/1007.png}
+OfflineState/AvailableState substate.\\
+\includegraphics[width=4.68750in]{jira_imgs/1051.png}
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+This test step was verified in the previous test.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 4 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{OFFLINESTATE -\textgreater{} STANDBYSTATE}\\
 Click on the State Command field in the Commands to Send section.\\
-\includegraphics[width=1.79167in]{jira_imgs/1030.png}
+\includegraphics[width=4.42708in]{jira_imgs/1052.png}
 
 \medskip }
 \end{minipage}
@@ -1846,27 +1758,25 @@ Click on the State Command field in the Commands to Send section.\\
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions into the StandbyState and the primary state
-display box at the top of the Main tab says Standby State.\\
-\includegraphics[width=4.68750in]{jira_imgs/1018.png}
+display box at the top of the Main tab says Standby
+State.\\[2\baselineskip]\includegraphics[width=4.68750in]{jira_imgs/1053.png}
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+This test step was verified in the previous test.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 5 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{STANDBYSTATE -\textgreater{} DISABLEDSTATE}\\
 From the StandbyState, send a start command.
 
@@ -1877,7 +1787,6 @@ From the StandbyState, send a start command.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions into DisabledState and the current configuration
 parameters are maintained from the default parameters or from the
 previous DDS start command.~\\
@@ -1890,17 +1799,16 @@ transition into a Fault State
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+This test step was verified in the previous test.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 6 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{DISABLEDSTATE -\textgreater{} ENABLEDSTATE}\\
 From the DisabledState, send an Enable state.
 
@@ -1911,7 +1819,6 @@ From the DisabledState, send an Enable state.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions into the EnabledState/Stationary substate, the
 motor drives are enabled, and motion can be commanded.\\
 \includegraphics[width=3.12500in]{jira_imgs/1020.png}\\
@@ -1921,17 +1828,16 @@ motor drives are enabled, and motion can be commanded.\\
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+This test step was verified in the previous test.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 7 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{FAULTSTATE}\\
 If a Fault occurs in any of the other states, the system will
 automatically transition to the Fault State. While in the Fault state,
@@ -1946,7 +1852,6 @@ the safety relay switch and send a clearError command.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions back to the OfflineState/PublishOnly substate.
 (Go back to Step 3)\\
 \includegraphics[width=3.12500in]{jira_imgs/1021.png}
@@ -1956,17 +1861,16 @@ The system transitions back to the OfflineState/PublishOnly substate.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+This test step was verified in the previous test.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 8 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Follow Section 3.4.4 of the LSST Hexapods-Rotator Acceptance Test
 Procedure, Sheet 47.
 
@@ -1976,22 +1880,20 @@ Procedure, Sheet 47.
 
  & Test Data \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 \textbf{Deviation:} After verifying that the rotator can move through
 it's operational range (+/- 90 deg) without triggering any limits,
 adjust the software limit to in between the values for the Limit Switch
 and End Stop as defined in the table below for SN 02 (taken from
 vendor's Acceptance Test Report). Move the rotator to trip the positive
-and negative limit switchs.\\
-\includegraphics[width=1.79167in]{jira_imgs/984.png}\\
-Do \textbf{NOT} verify the rotator's End Stop hardpoints.
+and negative limit
+switchs.\\[2\baselineskip]\includegraphics[width=4.68750in]{jira_imgs/1054.png}Do
+\textbf{NOT} verify the rotator's End Stop hardpoints.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 \begin{enumerate}
 \tightlist
 \item
@@ -2006,17 +1908,27 @@ Do \textbf{NOT} verify the rotator's End Stop hardpoints.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+When commanded to +90 degrees, the Camera Rotator was stopped at 89.9745
+degrees and did not trip the software limit or limit switch. When
+commanded to -90 degrees, the Camera Rotator was stopped at -90.0323
+degrees and did not trip the software limit or limit switch.\\
+However, LSST's code prevents the adjustment of the software limits so
+the limit switches could not be tested.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Issues found executing this step:  \\
+ & \begin{minipage}[t]{13cm}{\footnotesize
+\href{https://jira.lsstcorp.org/browse/LVV-18517}{LVV-18517}~~Unable to adjust Camera rotator software limits with current code
+
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
+ & Status: \textbf{ Fail } \\ \hline
 
 9 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Follow Section 3.4.1 of the LSST Hexapods-Rotator Acceptance Test
 Procedure, Sheet 46.
 
@@ -2027,7 +1939,6 @@ Procedure, Sheet 46.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The axis of rotation is visually confirmed to be along the z-axis and is
 consistent to the results of the initial tests conducted by the vendor
 as seen in the LSST Hexapods-Rotator Acceptance Test Report, Sheet 48.
@@ -2037,17 +1948,16 @@ as seen in the LSST Hexapods-Rotator Acceptance Test Report, Sheet 48.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+The right hand rule was used to visually confirm the axis of rotation.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 10 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Follow Section 3.4.2 of the LSST Hexapods-Rotator Acceptance Test
 Procedure, Sheet 46 using a laser tracker.
 
@@ -2057,7 +1967,6 @@ Procedure, Sheet 46 using a laser tracker.
 
  & Test Data \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 \textbf{Deviation:} Instead of using 5 different elevation angles, the
 test will only be conducted at a 0deg elevation angle
 
@@ -2066,7 +1975,6 @@ test will only be conducted at a 0deg elevation angle
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator is tested every 30 degrees across the entire range of
 motion and the maximum angle error is found to be less than 0.009
 degrees.
@@ -2076,17 +1984,17 @@ degrees.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+The average error was found to be 0.0075 degrees but was tested every 20
+degrees instead of every 30.~
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 11 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Follow Section 3.4.5.1 of the LSST Hexapods-Rotator Acceptance Test
 Procedure, Sheet 48.
 
@@ -2097,7 +2005,6 @@ Procedure, Sheet 48.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator is able to reach the required velocity of 3.5 deg/s
 as verified before per the LSST Hexapods-Rotator Acceptance Test Report,
 Sheet 50-52
@@ -2107,17 +2014,17 @@ Sheet 50-52
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+The default velocity used in other test steps was 3.5deg/s and the
+Camera Rotator was seen to be able to reach the maximum velocity.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 12 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Follow Section 3.4.5.2 of the LSST Hexapods-Rotator Acceptance Test
 Procedure, Sheet 49.
 
@@ -2128,7 +2035,6 @@ Procedure, Sheet 49.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator is able to reach the required acceleration of 1.0
 degrees/sec\^{}2 as verified before per the LSST Hexapods\_Rotator
 Acceptance Test Report, Sheet 52.
@@ -2138,17 +2044,18 @@ Acceptance Test Report, Sheet 52.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+The Camera Rotator was verified to reach the required acceleration. See
+videos ``20200129\_122733.mp4'' and ``20200129\_123530.mp4''
+in~\url{https://docushare.lsstcorp.org/docushare/dsweb/View/Collection-8902}~
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 13 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Follow Section 3.4.5.3 of the LSST Hexapods-Rotator Acceptance Test
 Procedure, Sheet 49.
 
@@ -2158,7 +2065,6 @@ Procedure, Sheet 49.
 
  & Test Data \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 \textbf{Deviation:~}Steps 7, 8 and 9 (Section 3.4.5.3, 3.4.5.4 and
 3.4.5.5) can be tested simultaneously with the same data.
 
@@ -2167,7 +2073,6 @@ Procedure, Sheet 49.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The initial result of the test (as seen in LSST Hexapods\_Rotator
 Acceptance Test Report, Sheet 52-54) found that the requirement was not
 met, but was accepted per deviation request
@@ -2181,17 +2086,19 @@ deviation.\\
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+The maximum angular error was found to be 0.0014deg.\\
+\emph{Roberto: The test was not done with a laser tracker because the
+oscillation of the measurements is very high so the test were done using
+the telemetry data.}
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 14 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Follow Section 3.4.5.4 of the LSST Hexapods-Rotator Acceptance Test
 Procedure, Sheet 49.
 
@@ -2201,7 +2108,6 @@ Procedure, Sheet 49.
 
  & Test Data \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 \textbf{Deviation:~}Perform this step at a 0 degree elevation angle
 instead of the 90 degree angle listed in the procedure and use the same
 data used in Step 7.~
@@ -2211,7 +2117,6 @@ data used in Step 7.~
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The maximum radial displacement is measured to be under 50 microns as
 previously verified per LSST Hexapods\_Rotator Acceptance Test Report,
 Sheet 54.
@@ -2221,17 +2126,16 @@ Sheet 54.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+The maximum radial run-out was found to be 8.3um.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 15 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Follow Section 3.4.5.5 of the LSST Hexapods-Rotator Acceptance Test
 Procedure, Sheet 50.
 
@@ -2241,7 +2145,6 @@ Procedure, Sheet 50.
 
  & Test Data \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 \textbf{Deviation:~}Perform this step at a 0 degree elevation angle
 instead of the 90 degree angle listed in the procedure and use the same
 data used in Step 7.~
@@ -2251,7 +2154,6 @@ data used in Step 7.~
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {The maximum radial displacement is measured to be under 100 microns as
 previously verified per LSST Hexapods\_Rotator Acceptance Test Report,
 Sheet 55. }
@@ -2261,17 +2163,16 @@ Sheet 55. }
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+The maximum axial run-out was found to be 18.3um.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 16 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Follow Section 3.4.5.6 of the LSST Hexapods-Rotator Acceptance Test
 Procedure, Sheet 50.
 
@@ -2281,7 +2182,6 @@ Procedure, Sheet 50.
 
  & Test Data \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 \textbf{Deviation:} This will be done with a laser tracker knowing that
 we will not be able to measure as low as 2 microns.~
 
@@ -2290,7 +2190,6 @@ we will not be able to measure as low as 2 microns.~
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {Since the error cannot be measured up to 2 microns, the camera
 rotator's accuracy is found to be as good as the laser tracker's
 accuracy.}
@@ -2300,17 +2199,19 @@ accuracy.}
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+As expected, the RMS non-repeatable axial run-out could not be measured
+up to 2 microns and was found to be 12um instead. The laser tracker
+error is \textasciitilde{}35um depending on the temperature so this can
+be considered as a pass.~
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 17 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 To verify 3.4.6.1, follow Section 3.4.6.2 of the LSST Hexapods-Rotator
 Acceptance Test Procedure, Sheet 50-52.
 
@@ -2320,7 +2221,6 @@ Acceptance Test Procedure, Sheet 50-52.
 
  & Test Data \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 \textbf{Deviation:} Steps 10 and 11 (Section 3.4.6.1 and 3.4.6.2) will
 be tested simultaneously.\\
 We will be testing all speeds from 0.005 to 0.068deg/s just like in LSST
@@ -2333,7 +2233,6 @@ angle (0 Deg El) to verify.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 \begin{enumerate}
 \tightlist
 \item
@@ -2351,17 +2250,17 @@ angle (0 Deg El) to verify.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+Although the data was not published to the EFD, this test was visually
+confirmed to be verified.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 18 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Follow Section 3.4.6.6 of the LSST Hexapods-Rotator Acceptance Test
 Procedure, Sheet 53
 
@@ -2371,7 +2270,6 @@ Procedure, Sheet 53
 
  & Test Data \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 \textbf{Deviation:~}This will only be conducted at 0 deg elevation angle
 since it is on the camera cart.
 
@@ -2380,7 +2278,6 @@ since it is on the camera cart.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 By checking the current of the system, the heat dissipation for the
 rotator is verified to be less than 40W.
 
@@ -2389,7 +2286,9 @@ rotator is verified to be less than 40W.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+As this was originally tested with a surrogate mass, this step was left
+unexecuted and will be tested in the future with ComCam (with load) and
+current probes.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -2399,7 +2298,6 @@ rotator is verified to be less than 40W.
 19 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Follow Section 3.4.9 of the LSST Hexapods-Rotator Acceptance Test
 Procedure, Sheet 54.
 
@@ -2410,7 +2308,6 @@ Procedure, Sheet 54.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The locking pin is demonstrated to be able to engage at 15 deg intervals
 throughout the entire rotator range while the camera hexapod/rotator is
 installed on the camera cart.
@@ -2420,12 +2317,13 @@ installed on the camera cart.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
+The locking pin was able to be engaged at 0 degrees and is believed to
+be able to be engaged for all 15 deg intervals.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Initial Pass } \\ \hline
 
 \end{longtable}
 
